@@ -1,0 +1,72 @@
+/* Navbar.module.css */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 88px;
+    background: linear-gradient(90deg, #e6f3fa 0%, #b3d6ec 100%);
+    border-bottom: 1px solid #e0e7ef;
+    font-family: 'Poppins', Arial, sans-serif;
+    /* Only affects Navbar */
+    z-index: 100;
+}
+
+.logoBlock {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    padding: 8px 32px 8px 12px;
+    min-width: 410px;
+    min-height: 60px;
+    max-height: 72px;
+    overflow: hidden;
+}
+
+.logoImg {
+    height: 72px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.navList {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 32px;
+}
+
+.navItem {
+    position: relative;
+}
+
+.navLink {
+    text-decoration: none;
+    color: #15396a;
+    font-weight: 500;
+    font-size: 17px;
+    transition: color 0.2s;
+    padding: 8px 0;
+    position: relative;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.careersLink {
+    color: #1976d2;
+    font-weight: 600;
+}
+
+.newBadge {
+    color: #e57373;
+    font-size: 11px;
+    font-weight: 700;
+    margin-left: 4px;
+    vertical-align: super;
+    letter-spacing: 0.2px;
+    font-family: 'Poppins', Arial, sans-serif;
+}

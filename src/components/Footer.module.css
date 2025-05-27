@@ -1,0 +1,162 @@
+.footer {
+    background: #393939;
+    color: #fff;
+    padding: 48px 0 0 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    position: relative;
+    z-index: 10;
+}
+
+.footerTop {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+}
+
+.footerLinksSection {
+    flex: 1 1 300px;
+}
+
+.footerHeading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #fff;
+}
+
+.footerLinks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footerLinks li {
+    margin-bottom: 14px;
+    border-bottom: 1px solid #575757;
+    padding-bottom: 10px;
+}
+
+.footerLinks li:last-child {
+    margin-bottom: 0;
+}
+
+.footerLinks a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 400;
+    transition: color 0.2s;
+}
+
+.footerLinks a:hover {
+    color: #ffb400;
+}
+
+.footerBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px 16px 20px;
+    border-top: 1px solid #222;
+    flex-wrap: wrap;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 18px;
+}
+
+.socialIcons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #222;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    color: #fff;
+    font-size: 1.25rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.socialIcons a:hover {
+    background: #ffb400;
+    color: #222;
+}
+
+.copyright {
+    color: #ccc;
+    font-size: 1rem;
+    text-align: center;
+    flex: 1 1 220px;
+}
+
+.snmLogoBlock {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.snmLogo {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #fff;
+    border: 2px solid #e3e3e3;
+}
+
+.snmText {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'Poppins', Arial, sans-serif;
+    text-shadow: 1px 1px 2px #222;
+}
+
+.scrollTopBtn {
+    position: absolute;
+    right: 36px;
+    bottom: 16px;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.2s;
+    z-index: 20;
+}
+
+.scrollTopBtn:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.21);
+}
+
+@media (max-width: 900px) {
+    .footerTop {
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+    }
+    .footerBottom {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 10px 16px 10px;
+    }
+    .snmLogoBlock {
+        margin-top: 10px;
+    }
+    .scrollTopBtn {
+        right: 16px;
+        bottom: 16px;
+    }
+}
