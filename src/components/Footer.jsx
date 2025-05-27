@@ -1,54 +1,68 @@
 import React from "react";
-// import styles from "./Footer.module.css";
+import { Layout, Row, Col, Typography, Space, Button } from "antd";
 import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram, FaRss } from "react-icons/fa";
-import snmLogo from "../images/logo.webp"; // Place your logo image in the same folder and update the filename if needed
+import { ArrowUpOutlined } from "@ant-design/icons";
+import snmLogo from "../images/logo.webp";
 
-const Footer = () => (
-  <footer className={styles.footer}>
-    <div className={styles.footerTop}>
-      <div className={styles.footerLinksSection}>
-        <h4 className={styles.footerHeading}>Quick Links</h4>
-        <ul className={styles.footerLinks}>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Social Media – Some Guidelines</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-        </ul>
-      </div>
-      <div className={styles.footerLinksSection}>
-        <h4 className={styles.footerHeading}>Useful Links</h4>
-        <ul className={styles.footerLinks}>
-          <li><a href="#">Award and Honors</a></li>
-          <li><a href="#">Our Partners</a></li>
-          <li><a href="#">Foreign Contributions</a></li>
-          <li><a href="#">Contribute</a></li>
-        </ul>
-      </div>
-    </div>
+const { Footer } = Layout;
+const { Title, Text, Link } = Typography;
 
-    <div className={styles.footerBottom}>
-      <div className={styles.socialIcons}>
-        <a href="#" aria-label="Facebook"><FaFacebookF /></a>
-        <a href="#" aria-label="Twitter"><FaTwitter /></a>
-        <a href="#" aria-label="YouTube"><FaYoutube /></a>
-        <a href="#" aria-label="Instagram"><FaInstagram /></a>
-        <a href="#" aria-label="RSS"><FaRss /></a>
-      </div>
-      <div className={styles.copyright}>
-        Copyright © 2010 | Sant Nirankari Charitable Foundation
-      </div>
-      <div className={styles.snmLogoBlock}>
-        <img src={snmLogo} alt="Sant Nirankari Mission" className={styles.snmLogo} />
-        <span className={styles.snmText}>Sant Nirankari Mission</span>
-      </div>
-    </div>
-    <button className={styles.scrollTopBtn} aria-label="Scroll to top" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-      <svg width="26" height="26" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="11" fill="#fff" stroke="#333" strokeWidth="2"/>
-        <polyline points="8,14 12,10 16,14" fill="none" stroke="#333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    </button>
-  </footer>
+const CustomFooter = () => (
+  <Footer style={{  padding: "40px 20px" }}>
+    {/* Top Links Section */}
+    <Row gutter={[32, 24]} justify="space-between">
+      <Col xs={24} md={12}>
+        <Title level={4}>Quick Links</Title>
+        <Space direction="vertical">
+          <Link href="#">Contact</Link>
+          <Link href="#">Social Media – Some Guidelines</Link>
+          <Link href="#">Privacy Policy</Link>
+          <Link href="#">Terms of Service</Link>
+        </Space>
+      </Col>
+      <Col xs={24} md={12}>
+        <Title level={4}>Useful Links</Title>
+        <Space direction="vertical">
+          <Link href="#">Award and Honors</Link>
+          <Link href="#">Our Partners</Link>
+          <Link href="#">Foreign Contributions</Link>
+          <Link href="#">Contribute</Link>
+        </Space>
+      </Col>
+    </Row>
+
+    {/* Bottom Section */}
+    <Row justify="space-between" align="middle" style={{ marginTop: "40px", flexWrap: "wrap" }}>
+      <Col>
+        <Space size="middle">
+          <a href="#" aria-label="Facebook"><FaFacebookF size={20} /></a>
+          <a href="#" aria-label="Twitter"><FaTwitter size={20} /></a>
+          <a href="#" aria-label="YouTube"><FaYoutube size={20} /></a>
+          <a href="#" aria-label="Instagram"><FaInstagram size={20} /></a>
+          <a href="#" aria-label="RSS"><FaRss size={20} /></a>
+        </Space>
+      </Col>
+      <Col>
+        <Text>&copy; 2010 | Sant Nirankari Charitable Foundation</Text>
+      </Col>
+      <Col>
+        <Space>
+          <img src={snmLogo} alt="Sant Nirankari Mission" style={{ height: "40px" }} />
+          <Text>Sant Nirankari Mission</Text>
+        </Space>
+      </Col>
+    </Row>
+
+    {/* Scroll to Top Button */}
+    <Button
+      type="default"
+      shape="circle"
+      size="large"
+      icon={<ArrowUpOutlined />}
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      style={{ position: "fixed", bottom: 20, right: 20 }}
+    />
+  </Footer>
 );
 
-export default Footer;
+export default CustomFooter;

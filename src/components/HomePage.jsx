@@ -3,13 +3,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
 import { FaLeaf, FaBookOpen, FaHandsHelping } from "react-icons/fa";
-import { 
-  Card, 
-  Button, 
-  Typography, 
-  Space, 
-  Row, 
-  Col, 
+import {
+  Card,
+  Button,
+  Typography,
+  Space,
+  Row,
+  Col,
   Carousel,
   Divider
 } from 'antd';
@@ -90,7 +90,7 @@ const HomePage = () => {
   return (
     <div >
       {/* Hero Section */}
-        <Navbar />
+      <Navbar />
       <section className="hero-section">
         <Swiper
           modules={[Autoplay, EffectFade, Navigation, Pagination]}
@@ -146,70 +146,52 @@ const HomePage = () => {
 
       {/* Mission Section */}
       <section className="mission-section" style={{ padding: '4rem 0' }}>
-        <Row gutter={[24, 24]} justify="center" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <Col xs={24} sm={12} md={8}>
-            <Card 
-              hoverable
-              cover={
-                <div style={{ padding: '2rem', textAlign: 'center' }}>
-                  <HeartOutlined style={{ fontSize: '3rem', color: '#52c41a' }} />
-                </div>
-              }
-            >
-              <Card.Meta
-                title="HEAL"
-                description="SNCF's Multifaceted Approach towards healthcare initiatives"
-              />
-              <Divider />
-              <Paragraph>
-                SNCF is dedicated to improving healthcare. 
-                Manages hospitals, clinics, blood banks, dispensaries & adopt strategies for environmental conservation.
-              </Paragraph>
-            </Card>
-          </Col>
-          
-          <Col xs={24} sm={12} md={8}>
-            <Card 
-              hoverable
-              cover={
-                <div style={{ padding: '2rem', textAlign: 'center' }}>
-                  <BookOutlined style={{ fontSize: '3rem', color: '#1890ff' }} />
-                </div>
-              }
-            >
-              <Card.Meta
-                title="ENRICH"
-                description="SNCF's Holistic Approach to Social Change"
-              />
-              <Divider />
-              <Paragraph>
-                SNCF empowers communities through education. 
-                We support educational, vocational & technical institutions, libraries, hostels in India.
-              </Paragraph>
-            </Card>
-          </Col>
-          
-          <Col xs={24} sm={12} md={8}>
-            <Card 
-              hoverable
-              cover={
-                <div style={{ padding: '2rem', textAlign: 'center' }}>
-                  <TeamOutlined style={{ fontSize: '3rem', color: '#faad14' }} />
-                </div>
-              }
-            >
-              <Card.Meta
-                title="EMPOWER"
-                description="SNCF investing in self-sufficiency, instilling empowerment through opportunity"
-              />
-              <Divider />
-              <Paragraph>
-                SNCF orchestrates individual empowerment through workshops, women/youth programs, 
-                elder care, disaster relief, and disability support initiatives.
-              </Paragraph>
-            </Card>
-          </Col>
-          
+        <Row
+          gutter={[24, 24]}
+          justify="center"
+          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+          }}
+        >
+          {[{
+            title: "HEAL",
+            description: "SNCF's Multifaceted Approach towards healthcare initiatives",
+            icon: <HeartOutlined style={{ fontSize: '3rem', color: '#52c41a' }} />,
+            content: `SNCF is dedicated to improving healthcare. 
+      Manages hospitals, clinics, blood banks, dispensaries & adopt strategies for environmental conservation.`
+          }, {
+            title: "ENRICH",
+            description: "SNCF's Holistic Approach to Social Change",
+            icon: <BookOutlined style={{ fontSize: '3rem', color: '#1890ff' }} />,
+            content: `SNCF empowers communities through education. 
+      We support educational, vocational & technical institutions, libraries, hostels in India.`
+          }, {
+            title: "EMPOWER",
+            description: "SNCF investing in self-sufficiency, instilling empowerment through opportunity",
+            icon: <TeamOutlined style={{ fontSize: '3rem', color: '#faad14' }} />,
+            content: `SNCF orchestrates individual empowerment through workshops, women/youth programs, 
+      elder care, disaster relief, and disability support initiatives.`
+          }].map((item, index) => (
+            <Col key={index} xs={24} sm={12} md={8} style={{ display: 'flex' }}>
+              <Card
+                hoverable
+                style={{ width: '100%', display: 'flex', flexDirection: 'column' }}
+                cover={
+                  <div style={{ padding: '1rem', textAlign: 'center' }}>
+                    {item.icon}
+                  </div>
+                }
+              >
+                <Card.Meta title={item.title} description={item.description} />
+                <Divider />
+                <Paragraph style={{ flexGrow: 1 }}>
+                  {item.content}
+                </Paragraph>
+              </Card>
+            </Col>
+          ))}
+
           <Col span={24} style={{ textAlign: 'center', marginTop: '2rem' }}>
             <blockquote style={{ fontSize: '1.5rem', fontStyle: 'italic' }}>
               "Life gets a meaning, if it is lived for others"
@@ -218,6 +200,7 @@ const HomePage = () => {
           </Col>
         </Row>
       </section>
+
 
       {/* About Us Section */}
       <section className="aboutus-section" style={{ padding: '4rem 0', backgroundColor: '#f0f2f5' }}>
@@ -254,14 +237,14 @@ const HomePage = () => {
           <Paragraph type="secondary" style={{ fontSize: '1.1rem' }}>
             Transforming noble ideals into impactful initiatives
           </Paragraph>
-          
+
           <Row gutter={[24, 24]} style={{ marginTop: '2rem' }}>
             <Col xs={24} md={8}>
               <Card
                 cover={
-                  <div 
-                    style={{ 
-                      height: '200px', 
+                  <div
+                    style={{
+                      height: '200px',
                       backgroundImage: `url(${image})`,
                       backgroundSize: 'cover',
                       backgroundPosition: 'center'
@@ -273,7 +256,7 @@ const HomePage = () => {
                   title="Sant Nirankari Health City"
                   description={
                     <Paragraph>
-                      The Sant Nirankari Health City is a comprehensive healthcare hub currently under construction, 
+                      The Sant Nirankari Health City is a comprehensive healthcare hub currently under construction,
                       aiming to provide top-notch medical care at affordable rates for everyone.
                     </Paragraph>
                   }
@@ -281,13 +264,13 @@ const HomePage = () => {
                 <Button type="link" style={{ padding: 0 }}>Read More</Button>
               </Card>
             </Col>
-            
+
             <Col xs={24} md={8}>
               <Card
                 cover={
-                  <div 
-                    style={{ 
-                      height: '200px', 
+                  <div
+                    style={{
+                      height: '200px',
                       backgroundImage: `url(${image2})`,
                       backgroundSize: 'cover',
                       backgroundPosition: 'center'
@@ -299,7 +282,7 @@ const HomePage = () => {
                   title="Oneness वन"
                   description={
                     <Paragraph>
-                      This innovative initiative was launched in 2021 to tackle deforestation by transforming neglected areas 
+                      This innovative initiative was launched in 2021 to tackle deforestation by transforming neglected areas
                       into flourishing mini-forests, restoring biodiversity one tiny plot at a time.
                     </Paragraph>
                   }
@@ -307,13 +290,13 @@ const HomePage = () => {
                 <Button type="link" style={{ padding: 0 }}>Read More</Button>
               </Card>
             </Col>
-            
+
             <Col xs={24} md={8}>
               <Card
                 cover={
-                  <div 
-                    style={{ 
-                      height: '200px', 
+                  <div
+                    style={{
+                      height: '200px',
                       backgroundImage: `url(${image3})`,
                       backgroundSize: 'cover',
                       backgroundPosition: 'center'
@@ -325,7 +308,7 @@ const HomePage = () => {
                   title="Blood Donation"
                   description={
                     <Paragraph>
-                      For over 38 years, the mission has held regular blood donation drives. Since 2010, SNCF leads this 
+                      For over 38 years, the mission has held regular blood donation drives. Since 2010, SNCF leads this
                       life-saving effort, continuing Baba Hardev Singh Ji Maharaj's message.
                     </Paragraph>
                   }
@@ -367,7 +350,7 @@ const HomePage = () => {
           <Paragraph type="secondary" style={{ fontSize: '1.1rem' }}>
             Stay updated with our latest efforts and inspiring stories.
           </Paragraph>
-          
+
           <Row gutter={[24, 24]} style={{ marginTop: '2rem' }}>
             {newsData.map((news, index) => (
               <Col key={index} xs={24} md={8}>
@@ -378,9 +361,9 @@ const HomePage = () => {
                 >
                   <Card
                     cover={
-                      <div 
-                        style={{ 
-                          height: '200px', 
+                      <div
+                        style={{
+                          height: '200px',
                           backgroundImage: `url(${news.imageUrl})`,
                           backgroundSize: 'cover',
                           backgroundPosition: 'center'
@@ -403,7 +386,7 @@ const HomePage = () => {
               </Col>
             ))}
           </Row>
-          
+
           <Button type="primary" size="large" style={{ marginTop: '2rem' }}>View All News</Button>
         </div>
       </section>
@@ -435,15 +418,15 @@ const HomePage = () => {
             ].map((item, index) => (
               <SwiperSlide key={index}>
                 <div style={{ padding: '1rem', textAlign: 'center' }}>
-                  <img 
-                    src={item.image} 
-                    alt={item.alt} 
-                    style={{ 
-                      maxWidth: '100%', 
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    style={{
+                      maxWidth: '100%',
                       height: 'auto',
                       borderRadius: '4px',
                       boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-                    }} 
+                    }}
                   />
                 </div>
               </SwiperSlide>
