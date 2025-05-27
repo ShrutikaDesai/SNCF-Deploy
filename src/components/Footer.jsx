@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Footer.module.css";
+// import styles from "./Footer.module.css";
 import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram, FaRss } from "react-icons/fa";
 import snmLogo from "../images/logo.webp"; // Place your logo image in the same folder and update the filename if needed
 
