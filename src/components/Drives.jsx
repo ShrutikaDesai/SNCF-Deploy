@@ -1,13 +1,13 @@
 import React from 'react';
-import { Button, Card, Row, Col, Typography, Space } from 'antd';
+import { Button, Card, Row, Col, Typography, Space, Carousel, Image } from 'antd';
+import bld4 from "../images/bld4.gif";
 import { ConfigProvider } from 'antd';
-import theme from '../theme/themeConfig'; // Adjust path as needed
-
+import theme from '../theme/themeConfig';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   BarChart, Bar, PieChart, Pie, Cell,
 } from 'recharts';
-
+import { motion } from 'framer-motion';
 import projectImg from '../images/blood2.jpg';
 import blogImg1 from '../images/blood.jpeg';
 import blogImg2 from '../images/blood.jpeg';
@@ -31,55 +31,178 @@ const bloodTypeData = [
   { name: 'Type AB', value: 150 },
 ];
 
+const stats = [
+  {
+    value: '1200+',
+    label: 'Donations Received',
+  },
+  {
+    value: '800+',
+    label: 'Pints of Blood Collected',
+  },
+  {
+    value: '500+',
+    label: 'Happy Recipients',
+  },
+];
+
+const facts = [
+  "Every 2 seconds, someone needs blood.",
+  "A single blood donation can save up to 3 lives.",
+  "Blood cannot be manufactured — it must come from donors.",
+  "Type O negative is the universal donor type.",
+  "Blood donors are lifesavers. Be one today.",
+];
+
 const COLORS = ['#E91E63', '#9C27B0', '#673AB7', '#3F51B5'];
 
 const Drives = () => (
   <ConfigProvider theme={theme}>
     <div style={{ fontFamily: theme.token.fontFamily, background: theme.token.colorBgLayout, minHeight: '100vh' }}>
       {/* Hero Section */}
-      <Card
-        style={{
-          background: theme.token.colorBgElevated,
-          margin: '24px auto',
-          maxWidth: 1200,
-          borderRadius: theme.token.borderRadius,
-          textAlign: 'center'
-        }}
-        bodyStyle={{ padding: 48 }}
-      >
-        <Title level={2} style={{ color: theme.token.colorPrimary, marginBottom: 0 }}>Blood Donation Drive</Title>
-        <Title style={{ margin: '16px 0', color: theme.token.colorHighlight, fontWeight: 700 }}>
-          Empower Lives: Join Our Mission
-        </Title>
-        <Paragraph style={{ color: theme.token.colorTextSecondary }}>
-          Together, we can bring hope and change to countless lives.
-        </Paragraph>
-        <Button type="primary" size="large" style={{ marginTop: 16 }}>
-          Join with Us
-        </Button>
-      </Card>
+      <section>
+        {/* Upper Hero Section */}
+        <Card
+          style={{
+            background: "linear-gradient(to right, #f5fafd, #e2f4fc 20%, #b3e0f7 60%, #a2d6f4)",
+            border: 'none',
+            borderRadius: 0,
+          }}
+          bodyStyle={{ padding: '48px 24px' }}
+        >
+          <Row
+            gutter={[32, 32]}
+            align="middle"
+            justify="center"
+            style={{ maxWidth: 1200, margin: '0 auto' }}
+          >
+            {/* Left Image */}
+            <Col xs={24} md={10}>
+              <Image
+                src={bld4}
+                alt="Blood Donation Kid"
+                preview={false}
+                style={{
+                  width: '100%',
+                  borderRadius: 12,
+                }}
+              />
+            </Col>
+
+            {/* Right Text Content */}
+            <Col xs={24} md={14}>
+              <Title level={2} style={{ color: theme.token.colorText }}>
+                Every week, thousands rely on blood donations
+              </Title>
+              <Title level={4} style={{ color: theme.token.colorPrimary, marginBottom: 24 }}>
+                Help us save lives by donating today
+              </Title>
+              <Paragraph style={{ color: theme.token.colorTextSecondary }}>
+                There is often not enough blood available to meet the need. Your donation makes a huge difference. <em>Thank you.</em>
+              </Paragraph>
+              <Button
+                type="primary"
+                size="large"
+                style={{
+                  marginTop: 16,
+                  background: "#1c276d",
+                  borderColor: "#1c276d",
+                }}
+              >
+                Donate Now
+              </Button>
+            </Col>
+          </Row>
+        </Card>
+
+        {/* Lower 'Did you know' Carousel */}
+        <Card
+          bodyStyle={{
+            padding: '24px 0',
+            background: theme.token.colorHighlight,
+            color: '#fff',
+            borderRadius: 0,
+          }}
+          style={{ marginBottom: 0 }}
+        >
+          <Row align="middle" justify="center" style={{ maxWidth: 1200, margin: '0 auto' }}>
+            <Col xs={24} md={6} style={{ paddingLeft: 24 }}>
+              <Title level={4} style={{ color: '#fff', margin: 0 }}>
+                Did you know...
+              </Title>
+            </Col>
+            <Col xs={24} md={18}>
+              <Carousel autoplay dots>
+                {facts.map((fact, index) => (
+                  <div key={index}>
+                    <Paragraph
+                      style={{
+                        color: '#fff',
+                        margin: 0,
+                        fontSize: 16,
+                        padding: '0 16px',
+                        textAlign: 'left',
+                      }}
+                    >
+                      {fact}
+                    </Paragraph>
+                  </div>
+                ))}
+              </Carousel>
+            </Col>
+          </Row>
+        </Card>
+      </section>
 
       {/* Stats Section */}
-      <Row gutter={[24, 24]} justify="center" style={{ maxWidth: 1200, margin: '0 auto 32px' }}>
-        <Col xs={24} sm={8}>
-          <Card bordered={false} style={{ textAlign: 'center', borderRadius: theme.token.borderRadius }}>
-            <Title level={3} style={{ color: theme.token.colorPrimary }}>1200+</Title>
-            <Paragraph>Donations Received</Paragraph>
-          </Card>
-        </Col>
-        <Col xs={24} sm={8}>
-          <Card bordered={false} style={{ textAlign: 'center', borderRadius: theme.token.borderRadius }}>
-            <Title level={3} style={{ color: theme.token.colorPrimary }}>800+</Title>
-            <Paragraph>Pints of Blood Collected</Paragraph>
-          </Card>
-        </Col>
-        <Col xs={24} sm={8}>
-          <Card bordered={false} style={{ textAlign: 'center', borderRadius: theme.token.borderRadius }}>
-            <Title level={3} style={{ color: theme.token.colorPrimary }}>500+</Title>
-            <Paragraph>Happy Recipients</Paragraph>
-          </Card>
-        </Col>
-      </Row>
+      <section
+        style={{
+          background: 'linear-gradient(to right, #f5fafd, #e2f4fc 20%, #b3e0f7 60%, #a2d6f4)',
+          padding: '64px 24px',
+          marginTop: 32,
+        }}
+      >
+        <Row
+          gutter={[24, 24]}
+          justify="center"
+          style={{ maxWidth: 1200, margin: '0 auto' }}
+        >
+          {stats.map((stat, index) => (
+            <Col xs={24} sm={12} md={8} key={index}>
+              <motion.div
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: '0 12px 24px rgba(0, 0, 0, 0.12)',
+                }}
+                whileTap={{ scale: 0.98 }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
+                <Card
+                  bordered={false}
+                  style={{
+                    textAlign: 'center',
+                    borderRadius: theme.token.borderRadius,
+                    padding: '32px 16px',
+                    backgroundColor: '#ffffff',
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.06)',
+                    transition: 'all 0.3s ease-in-out',
+                  }}
+                >
+                  <Title level={3} style={{ color: theme.token.colorPrimary, marginBottom: 8 }}>
+                    {stat.value}
+                  </Title>
+                  <Paragraph style={{ color: theme.token.colorTextSecondary, margin: 0 }}>
+                    {stat.label}
+                  </Paragraph>
+                </Card>
+              </motion.div>
+            </Col>
+          ))}
+        </Row>
+      </section>
 
       {/* Graph Section */}
       <Card
@@ -143,29 +266,102 @@ const Drives = () => (
       </Card>
 
       {/* Project Details Section */}
-      <Row gutter={[24, 24]} style={{ maxWidth: 1200, margin: '0 auto 32px' }} align="middle">
-        <Col xs={24} md={14}>
-          <Card bordered={false} style={{ borderRadius: theme.token.borderRadius }}>
-            <Title level={3}>About Project</Title>
-            <Paragraph>
-              Our blood donation project is dedicated to building a healthier future by ensuring a constant and safe blood supply for hospitals and patients. 
-              Through organized blood drives, community outreach programs, and partnerships with healthcare organizations, we aim to bridge the gap between blood donors and those in urgent need.
-            </Paragraph>
-            <Paragraph>
-              We focus not only on collecting blood but also on raising awareness about the importance of regular donation. 
-              Our initiatives are designed to make the donation process easy, transparent, and rewarding, fostering a community of regular donors committed to saving lives.
-            </Paragraph>
-            <Paragraph>
-              By engaging volunteers, educating youth, and utilizing technology, we strive to create a sustainable model where timely blood availability becomes a reality for everyone.
-              Join us in this life-saving mission — every drop counts, every donor matters.
-            </Paragraph>
-            <Button type="link" href="#video-section" style={{ padding: 0 }}>Read More</Button>
-          </Card>
-        </Col>
-        <Col xs={24} md={10}>
-          <img src={projectImg} alt="Project" style={{ width: '100%', borderRadius: theme.token.borderRadius, boxShadow: theme.components.Card.boxShadow }} />
-        </Col>
-      </Row>
+      <section style={{ background: '#f9fcff', padding: '64px 24px' }}>
+        <Row
+          gutter={[48, 48]}
+          style={{ maxWidth: 1200, margin: '0 auto' }}
+          align="middle"
+        >
+          {/* Left Content */}
+          <Col xs={24} md={14}>
+            <motion.div
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            >
+              <Card
+                bordered={false}
+                style={{
+                  borderRadius: theme.token.borderRadius,
+                  padding: '32px',
+                  boxShadow: '0 12px 32px rgba(0,0,0,0.06)',
+                }}
+                bodyStyle={{ padding: 0 }}
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <Title level={3} style={{ color: theme.token.colorPrimary }}>
+                    About the Project
+                  </Title>
+                </motion.div>
+
+                {[...Array(3)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 + i * 0.2 }}
+                  >
+                    <Paragraph style={{ color: theme.token.colorTextSecondary }}>
+                      {[
+                        "Our blood donation project is dedicated to building a healthier future by ensuring a constant and safe blood supply for hospitals and patients.",
+                        "We focus not only on collecting blood but also on raising awareness about the importance of regular donation. Our initiatives make the donation process easy, transparent, and rewarding.",
+                        "By engaging volunteers, educating youth, and utilizing technology, we create a sustainable model where timely blood availability becomes a reality. Every drop counts, every donor matters.",
+                      ][i]}
+                    </Paragraph>
+                  </motion.div>
+                ))}
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 1 }}
+                >
+                  <Button type="link" href="#video-section" style={{ padding: 0 }}>
+                    Read More
+                  </Button>
+                </motion.div>
+              </Card>
+            </motion.div>
+          </Col>
+
+          {/* Right Image */}
+          <Col xs={24} md={10}>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              animate={{
+                y: [0, -8, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+            >
+              <img
+                src={projectImg}
+                alt="Project"
+                style={{
+                  width: '85%',
+                  display: 'block',
+                  margin: '0 auto',
+                  borderRadius: theme.token.borderRadius,
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
+                }}
+              />
+            </motion.div>
+          </Col>
+        </Row>
+      </section>
 
       {/* Blogs Section */}
       <Card

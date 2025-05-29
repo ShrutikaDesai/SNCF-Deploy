@@ -12,10 +12,11 @@
   "dependencies": {
     "antd": "^5.25.3",
     "antd-style": "^3.7.1",
-    "framer-motion": "^12.14.0",
+    "framer-motion": "^12.15.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
+    "react-simple-typewriter": "^5.0.1",
     "recharts": "^2.15.3",
     "swiper": "^11.2.8",
     "typewriter-effect": "^2.22.0"

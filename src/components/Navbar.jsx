@@ -27,13 +27,13 @@ const navItems = [
     key: 'home',
     label: 'Home',
     icon: <HomeOutlined />,
-    href: '#'
+    href: '/'
   },
   { 
     key: 'projects',
     label: 'Projects',
     icon: <ProjectOutlined />,
-    href: '#'
+    href: '/drives'
   },
   { 
     key: 'values',
