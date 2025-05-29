@@ -23,13 +23,8 @@ import {
   TeamOutlined,
 } from "@ant-design/icons";
 
-
-
-
-
-
 import bld1 from "../images/Blood-Donation.jpg";
-import bld3 from "../images/Blood.jpeg";
+import bld3 from "../images/blood.jpeg";
 import image from "../images/city.jpg";
 import t1 from "../images/tree.jpg";
 import bld2 from "../images/BloodPNG.jpg";
@@ -42,7 +37,7 @@ import img7 from "../images/news1.jpg";
 import img8 from "../images/news2.jpg";
 import image2 from "../images/news2.jpg";
 
-import image3 from "../images/Blood.jpeg";
+import image3 from "../images/blood.jpeg";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -109,21 +104,6 @@ const slides = [
     highlightColor: "#FFD600",
   },
 ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
