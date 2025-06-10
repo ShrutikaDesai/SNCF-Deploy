@@ -21,6 +21,7 @@ import logoImg from "../images/logo.webp";
 
 const { Header } = Layout;
 const { Text } = Typography;
+import { Link } from "react-router-dom";
 
 const navItems = [
   { 
@@ -100,30 +101,29 @@ const Navbar = () => {
       </div>
       
       <Menu
-        theme="light"
-        mode="horizontal"
-        style={{
-          flex: 1,
-          minWidth: 0,
-          borderBottom: 'none',
-          justifyContent: 'flex-end'
-        }}
-        items={navItems.map(item => ({
-          key: item.key,
-          label: (
-            <a href={item.href} style={{ color: 'inherit' }}>
-              {item.label}
-            </a>
-          ),
-          icon: item.icon,
-          style: item.type === 'primary' ? { 
-            // background: '#1890ff',
-            color: '#fff',
-            borderRadius: '4px',
-            marginLeft: '8px'
-          } : {}
-        }))}
-      />
+  theme="light"
+  mode="horizontal"
+  style={{
+    flex: 1,
+    minWidth: 0,
+    borderBottom: 'none',
+    justifyContent: 'flex-end'
+  }}
+  items={navItems.map(item => ({
+    key: item.key,
+    label: (
+      item.href.startsWith("/")
+        ? <Link to={item.href} style={{ color: 'inherit' }}>{item.label}</Link>
+        : <a href={item.href} style={{ color: 'inherit' }}>{item.label}</a>
+    ),
+    icon: item.icon,
+    style: item.type === 'primary' ? { 
+      color: '#fff',
+      borderRadius: '4px',
+      marginLeft: '8px'
+    } : {}
+  }))}
+/>
     </Header>
   );
 };

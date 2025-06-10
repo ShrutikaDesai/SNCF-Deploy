@@ -64,7 +64,7 @@ const Drives = () => (
         {/* Upper Hero Section */}
         <Card
           style={{
-            background: "linear-gradient(to right, #f5fafd, #e2f4fc 20%, #b3e0f7 60%, #a2d6f4)",
+            // background: "linear-gradient(to right, #f5fafd, #e2f4fc 20%, #b3e0f7 60%, #a2d6f4)",
             border: 'none',
             borderRadius: 0,
           }}
@@ -157,7 +157,7 @@ const Drives = () => (
       {/* Stats Section */}
       <section
         style={{
-          background: 'linear-gradient(to right, #f5fafd, #e2f4fc 20%, #b3e0f7 60%, #a2d6f4)',
+          // background: 'linear-gradient(to right, #f5fafd, #e2f4fc 20%, #b3e0f7 60%, #a2d6f4)',
           padding: '64px 24px',
           marginTop: 32,
         }}
