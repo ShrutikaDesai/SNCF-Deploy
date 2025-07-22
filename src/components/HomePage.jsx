@@ -236,8 +236,8 @@ const missionCards = [
 
 
 const HomePage = () => (
-  <div
-  >
+  <div>
+    <h1> Home page</h1>
 
     {/* Hero Section */}
     <section>
