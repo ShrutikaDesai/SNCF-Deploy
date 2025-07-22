@@ -23,8 +23,8 @@ import {
 } from "@ant-design/icons";
 
 // Adjust these to your project:
-// import logoImg from "../assets/sncfheader4.webp";
-import logoImg from "../assets/newlogo.";
+import logoImg from "../assets/sncfheader4.webp";
+// import logoImg from "../assets/newlogo1.jpg";
 
 import navbarBg from "../assets/header_back.jpg";
 
