@@ -178,10 +178,10 @@ const Navbar = () => {
             <Link to="/honours">Honors and Recognitions</Link>
           </Menu.Item>
           <Menu.Item key="our-partners" icon={<UsergroupAddOutlined style={{ marginRight: -4 }} />}>
-            <Link to="#">Our Partners</Link>
+            <Link to="/partners">Our Partners</Link>
           </Menu.Item>
           <Menu.Item key="contact" icon={<PhoneOutlined style={{ marginRight: -4 }} />}>
-            <Link to="#">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </Menu.Item>
         </Menu.SubMenu>
         <Menu.Item key="guiding-force" icon={<BulbOutlined style={{ marginRight: -4 }} />}>
@@ -189,7 +189,7 @@ const Navbar = () => {
         </Menu.Item>
         <Menu.Item key="careers" icon={<SolutionOutlined style={{ marginRight: -4 }} />}>
           <Space>
-            <a href="#" style={{ fontWeight: "bold" }}>Careers</a>
+            <a href="https://www.nirankarihealthcity.org/careers/" style={{ fontWeight: "bold" }}>Careers</a>
             <Badge count="New" style={{ backgroundColor: "#ffffff", color: "#000", border: "1px solid #d9d9d9" }} />
           </Space>
         </Menu.Item>

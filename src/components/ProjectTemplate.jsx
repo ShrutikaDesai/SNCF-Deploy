@@ -142,7 +142,7 @@ const ProjectTemplate = () => (
         borderRadius: 32,
         overflow: 'hidden',
         boxShadow: '0 8px 32px rgba(0,0,0,0.10)',
-        margin: '2rem 0',
+          margin: '2rem 0',
         padding: 0,
       }}
     >
@@ -155,6 +155,7 @@ const ProjectTemplate = () => (
           borderRadius: '32px 32px 0 0',
           position: 'relative',
           alignItems: 'flex-end',
+          
         }}
       >
         {/* Left: Tagline & Headline */}
@@ -201,11 +202,11 @@ const ProjectTemplate = () => (
           </motion.div>
 
           {/* Floating Data Overlays */}
-          <motion.div
+                  <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            style={{ display: 'flex', gap: 18, marginTop: 50, flexWrap: 'wrap' }} // Increased marginTop for better spacing
+            style={{ display: 'flex', gap: 18, marginTop: 50, flexWrap: 'wrap' }}
           >
             {stats.map((stat) => (
               <div
@@ -213,24 +214,42 @@ const ProjectTemplate = () => (
                 style={{
                   background: 'rgba(255,255,255,0.18)',
                   borderRadius: 14,
-                  padding: '0.7rem 1.2rem',
-                  color: '#white',
+                  padding: '0.8rem 1.2rem',
+                  color: '#fff',
                   fontWeight: 600,
                   fontSize: 16,
                   boxShadow: '0 4px 16px rgba(0,0,0,0.10)',
                   backdropFilter: 'blur(6px)',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: 10,
-                  minWidth: 170,
+                  gap: 12,
+                  minWidth: 210,
                 }}
               >
-                <span role="img" aria-label={stat.label} style={{ fontSize: 22, color: stat.color }}>{stat.icon}</span>
-                <CountUp end={stat.value} duration={2.5} separator="," />+
-                <span style={{ fontWeight: 400, marginLeft: 5 }}>{stat.label}</span>
+                {/* Icon */}
+                <span
+                  role="img"
+                  aria-label={stat.label}
+                  style={{
+                    fontSize: 26,
+                    color: stat.color,
+                    flexShrink: 0,
+                  }}
+                >
+                  {stat.icon}
+                </span>
+
+                {/* Number + Label Block */}
+                <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.3 }}>
+                  <span style={{ fontSize: 18, fontWeight: 700 }}>
+                    <CountUp end={stat.value} duration={2.5} separator="," />+
+                  </span>
+                  <span style={{ fontWeight: 400, fontSize: 14 }}>{stat.label}</span>
+                </div>
               </div>
             ))}
           </motion.div>
+
         </div>
 
         {/* Right: Hero Image */}
@@ -481,6 +500,7 @@ const ProjectTemplate = () => (
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true, amount: 0.4 }}
       >
         <Title level={2} style={{ color: '#0ABAB5', marginBottom: 24 }}>
           Blood Donation Records
@@ -573,6 +593,7 @@ const ProjectTemplate = () => (
         initial={{ y: -50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true, amount: 0.4 }}
         style={{ width: 100, margin: '0 auto 1.5rem' }}
       >
         <Lottie animationData={storyIcon} loop={true} />
@@ -583,6 +604,7 @@ const ProjectTemplate = () => (
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true, amount: 0.4 }}
       >
         <Title level={2} style={{ color: '#0ABAB5', marginBottom: 16 }}>
           Our Story
@@ -594,6 +616,7 @@ const ProjectTemplate = () => (
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.2 }}
+          viewport={{ once: true, amount: 0.4 }}
       >
         <Paragraph
           style={{
@@ -611,115 +634,131 @@ const ProjectTemplate = () => (
     </section>
 
 
-    {/* GALLERY / NEWS-BLOGS SECTION */}
-    <section
+   {/* GALLERY / NEWS-BLOGS SECTION */}
+<section
+  style={{
+    background: theme.token.colorBgLayout,
+    padding: '4rem 1.2rem',
+  }}
+>
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+    style={{ textAlign: 'center', marginBottom: '2.2rem' }}
+    viewport={{ once: true }}
+  >
+    <Title level={2} style={{ color: '#0ABAB5' }}>
+      Latest News & Stories
+    </Title>
+    <Paragraph
       style={{
-        background: theme.token.colorBgLayout,
-        padding: '4rem 1.2rem', // Slightly reduced padding
+        color: '#5f6a8d',
+        fontSize: 17,
+        maxWidth: 800,
+        margin: '0 auto',
+        textAlign: 'center',
       }}
     >
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        style={{ textAlign: 'center', marginBottom: '2.2rem' }}
-        viewport={{ once: true }}
-      >
-        <Title level={2} style={{ color: '#0ABAB5' }}>
-          Latest News & Stories
-        </Title>
-        <Paragraph style={{ color: '#5f6a8d', fontSize: 17, maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
-          Explore our recent events, inspiring journeys, and impactful moments from across the nation.
-        </Paragraph>
-      </motion.div>
+      Explore our recent events, inspiring journeys, and impactful moments from across the nation.
+    </Paragraph>
+  </motion.div>
 
-      <Row gutter={[24, 28]} justify="center"> {/* Reduced gap */}
-        {news.map((item, idx) => (
-          <Col xs={24} sm={12} md={8} key={item.title}>
-            <motion.div
-              whileHover={{ scale: 1.03 }}
+  <Row
+    gutter={[
+      { xs: 16, sm: 20, md: 24, lg: 24, xl: 24, xxl: 24 }, // ⬅️ Increased horizontal gutter
+      { xs: 24, sm: 32 } // ⬅️ Increased vertical gutter
+    ]}
+    justify="center"
+  >
+    {news.map((item, idx) => (
+      <Col xs={24} sm={12} md={8} lg={8} xl={6} xxl={6} key={item.title}>
+        <div style={{ height: '100%', display: 'flex', padding: '8px' }}>
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            style={{
+              overflow: 'hidden',
+              borderRadius: 18,
+              boxShadow: '0 4px 16px rgba(0,0,0,0.10)',
+              background: '#fff',
+              margin: '0 auto',
+              maxWidth: '100%',
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              height: '100%', // Ensures full height
+              border: '2px solid #d6eaf8',
+            }}
+            viewport={{ once: true }}
+          >
+            <img
+              src={item.image}
+              alt={item.title}
               style={{
-                overflow: 'hidden',
-                borderRadius: 18,
-                boxShadow: '0 4px 16px rgba(0,0,0,0.10)',
-                background: '#fff',
-                margin: '0 auto',
-                maxWidth: 380, // Reduced maxWidth for more compact layout
+                width: '100%',
+                height: 200,
+                objectFit: 'cover',
+              }}
+            />
+            <div
+              style={{
+                padding: '1.2rem 1.1rem 1.1rem 1.1rem',
+                flex: 1,
                 display: 'flex',
                 flexDirection: 'column',
-                height: '100%',
-                border: '2px solid #d6eaf8',
               }}
-              viewport={{ once: true }}
             >
-              <img
-                src={item.image}
-                alt={item.title}
+              <Title level={4} style={{ color: '#1c276d', marginBottom: 8 }}>
+                {item.title}
+              </Title>
+              <Paragraph
                 style={{
-                  width: '100%',
-                  height: 200,
-                  objectFit: 'cover',
-                }}
-              />
-              <div
-                style={{
-                  padding: '1.2rem 1.1rem 1.1rem 1.1rem',
-                  flex: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
+                  color: '#5f6a8d',
+                  fontSize: 15,
+                  marginBottom: 12,
+                  textAlign: 'justify',
                 }}
               >
-                <Title level={4} style={{ color: '#1c276d', marginBottom: 8 }}>
-                  {item.title}
-                </Title>
-                <Paragraph
+                {item.excerpt}
+              </Paragraph>
+
+              <div
+                style={{
+                  marginTop: 'auto',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}
+              >
+                <span
                   style={{
-                    color: '#5f6a8d',
+                    color: '#0ABAB5',
+                    fontWeight: 600,
+                  }}
+                >
+                  {item.date}
+                </span>
+
+                <Button
+                  type="link"
+                  style={{
+                    color: '#0ABAB5',
+                    fontWeight: 600,
+                    padding: 0,
                     fontSize: 15,
-                    marginBottom: 12,
-                    textAlign: 'justify', // Proper justify alignment
+                    transition: 'color 0.3s ease',
                   }}
                 >
-                  {item.excerpt}
-                </Paragraph>
-
-                <div
-                  style={{
-                    marginTop: 'auto',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                  }}
-                >
-                  <span
-                    style={{
-                      color: '#0ABAB5', // Consistent blue color
-                      fontWeight: 600,
-                    }}
-                  >
-                    {item.date}
-                  </span>
-
-                  <Button
-                    type="link"
-                    style={{
-                      color: '#0ABAB5', // Unified Read More color
-                      fontWeight: 600,
-                      padding: 0,
-                      fontSize: 15,
-                      transition: 'color 0.3s ease',
-                    }}
-                  >
-                    Read more
-                  </Button>
-                </div>
+                  Read more
+                </Button>
               </div>
-            </motion.div>
-          </Col>
-        ))}
-      </Row>
-    </section>
-
+            </div>
+          </motion.div>
+        </div>
+      </Col>
+    ))}
+  </Row>
+</section>
 
 
 

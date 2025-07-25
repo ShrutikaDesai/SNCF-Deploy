@@ -11,6 +11,8 @@ import AboutUs from './components/AboutUs';
 import MissionVision from './components/MissionVision';
 import Honours from './components/Honours';
 import Gallery from './components/Gallery';
+import Contact from './components/Contact';
+import Partners from './components/Partners';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route path="/mission-vision" element={<MissionVision />} />
           <Route path="/honours" element={<Honours />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} /> 
+          <Route path="/partners" element={<Partners />} /> 
 
           {/* Add more routes as needed */}
         </Routes>

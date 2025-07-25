@@ -19,6 +19,8 @@ import blogImg3 from '../images/blood.jpeg';
 import celebrationAnimation from '../images/corner.json';
 import pulseAnimation from '../images/corner.json';
 import img from '../images/health.jpeg';
+import CountUp from 'react-countup';
+
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -49,24 +51,28 @@ const radarData = [
 
 const stats = [
   {
-    value: '1200+',
+    value: 1200,
+    suffix: '+',
     label: 'Donations Received',
     icon: <FaTint color="#d54e91" size={32} />,
-    color: '#d54e91'
+    color: '#d54e91',
   },
   {
-    value: '800+',
+    value: 800,
+    suffix: '+',
     label: 'Pints of Blood Collected',
     icon: <MdOutlineBloodtype color="#5aa949" size={32} />,
-    color: '#5aa949'
+    color: '#5aa949',
   },
   {
-    value: '500+',
+    value: 500,
+    suffix: '+',
     label: 'Happy Recipients',
     icon: <FaSmile color="#59cbe8" size={32} />,
-    color: '#59cbe8'
+    color: '#59cbe8',
   },
 ];
+
 
 const facts = [
   "Every 2 seconds, someone needs blood.",
@@ -441,9 +447,16 @@ const Drives = () => (
                       animate={{ scale: 1 }}
                       transition={{ type: 'spring', stiffness: 180, delay: 0.5 + index * 0.1 }}
                     >
-                      {stat.value}
+                      <CountUp
+                        end={stat.value}
+                        duration={2}
+                        separator=","
+                        suffix={stat.suffix}
+                        delay={0.5 + index * 0.1}
+                      />
                     </motion.span>
                   </Title>
+
                   <Paragraph style={{ color: theme.token.colorTextSecondary, margin: 0 }}>
                     {stat.label}
                   </Paragraph>
@@ -480,7 +493,8 @@ const Drives = () => (
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.4 }}
+
 
           >
             <Title level={3} style={{ margin: 0, color: '#0ABAB5' }}>Donation Impact Overview</Title>
@@ -494,6 +508,8 @@ const Drives = () => (
               initial={{ x: -40, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.7 }}
+              viewport={{ once: true, amount: 0.4 }}
+
             >
               <Card bordered={false} title="Yearly Donation Trends">
                 <ResponsiveContainer width="100%" height={220}>
@@ -522,6 +538,8 @@ const Drives = () => (
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.7 }}
+              viewport={{ once: true, amount: 0.4 }}
+
             >
               <Card bordered={false} title="Donation Statistics">
                 <ResponsiveContainer width="100%" height={220}>
@@ -550,6 +568,8 @@ const Drives = () => (
               initial={{ x: 40, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.7 }}
+              viewport={{ once: true, amount: 0.4 }}
+
             >
               <Card bordered={false} title="Blood Type Distribution">
                 <ResponsiveContainer width="100%" height={220}>
@@ -586,6 +606,8 @@ const Drives = () => (
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1.2, delay: 0.2 }}
+              viewport={{ once: true, amount: 0.4 }}
+
             >
               <Card bordered={false} title="Foundation Impact Radar">
                 <ResponsiveContainer width="100%" height={240}>
@@ -732,6 +754,7 @@ const Drives = () => (
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: idx * 0.2 }}
+                viewport={{ once: true, amount: 0.4 }}
                 style={{ height: '100%' }}
               >
                 <Card
@@ -749,7 +772,7 @@ const Drives = () => (
                       alt={`Blog ${idx + 1}`}
                       src={blog.img}
                       style={{
-                        height: 200,
+                        height: 300,
                         objectFit: 'cover',
                         borderRadius: '10px 10px 0 0',
                         width: '100%',

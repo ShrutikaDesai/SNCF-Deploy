@@ -1,12 +1,10 @@
 import React from "react";
 import { Layout, Row, Col, Typography, Space, Button, Divider } from "antd";
-import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram, FaRss } from "react-icons/fa";
+import { FaFacebookF, FaYoutube, FaInstagram, FaRss } from "react-icons/fa";
 import { ArrowUpOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
 import xIcon from "../assets/xicon.png";
-import snmLogo from "../assets/image.webp";
-import theme from "../theme/themeConfig"; // <-- Import your theme config
-
+import theme from "../theme/themeConfig";
 
 const { Footer } = Layout;
 const { Title, Text } = Typography;
@@ -17,7 +15,8 @@ const themeColors = {
   accent: "#ADEED9",
   pink: "#FFEDF3",
   textDark: "#1c276d",
-  textSecondary: "#555555"
+  textSecondary: "#777",
+  background: "#f9fafa",
 };
 
 const socialLinks = [
@@ -33,145 +32,121 @@ const socialLinks = [
   { icon: <FaRss />, href: "#", label: "RSS", color: "#FFA500" },
 ];
 
-
 const CustomFooter = () => (
   <Footer
     style={{
-      background: theme.token.colorBgLayout,
-      borderTop: `4px solid ${themeColors.primary}`,
-      padding: "48px 0 24px 0",
-      boxShadow: "0 -4px 24px rgba(0,0,0,0.04)",
+      background: themeColors.background,
+      borderTop: `6px solid ${themeColors.primary}`,
+      borderRadius: "32px 32px 0 0",
+      padding: "64px 24px 24px 24px",
       position: "relative",
-      width: "100%",
-      maxWidth: "100vw",
     }}
   >
-    {/* Animated Sections */}
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-    >
+    <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
       <Row gutter={[48, 32]} justify="center" style={{ maxWidth: 1200, margin: "0 auto" }}>
+        {/* Column 1 - Quick Links */}
         <Col xs={24} md={8}>
-          <Title level={4} style={{ color: themeColors.primary, letterSpacing: 1 }}>Quick Links</Title>
-          <Space direction="vertical" size="middle">
-            {["Contact", "Social Media Guidelines", "Privacy Policy", "Terms of Service"].map((text, idx) => (
-              <motion.a
-                key={idx}
+        
+          <Title level={5} style={{ color: themeColors.textDark, marginBottom: 24 }}>Quick Links</Title>
+          <Space direction="vertical" size="small">
+            {["Contact", "Social Media Guidelines", "Privacy Policy", "Terms of Service"].map((item) => (
+              <a
+                key={item}
                 href="#"
-                whileHover={{ scale: 1.05, color: themeColors.primary }}
-                style={{ color: themeColors.textSecondary, textDecoration: "none", display: "block", transition: "color 0.3s" }}
+                style={{
+                  color: themeColors.textSecondary,
+                  textDecoration: "none",
+                  fontSize: 14,
+                }}
               >
-                {text}
-              </motion.a>
+                {item}
+              </a>
             ))}
           </Space>
         </Col>
 
+        {/* Column 2 - Useful Links */}
         <Col xs={24} md={8}>
-          <Title level={4} style={{ color: themeColors.primary, letterSpacing: 1 }}>Useful Links</Title>
-          <Space direction="vertical" size="middle">
-            {["Awards and Honors", "Our Partners", "Foreign Contributions", "Contribute"].map((text, idx) => (
-              <motion.a
-                key={idx}
+          <Title level={5} style={{ color: themeColors.textDark, marginBottom: 24 }}>Useful Links</Title>
+          <Space direction="vertical" size="small">
+            {["Awards and Honors", "Our Partners", "Foreign Contributions", "Contribute"].map((item) => (
+              <a
+                key={item}
                 href="#"
-                whileHover={{ scale: 1.05, color: themeColors.primary }}
-                style={{ color: themeColors.textSecondary, textDecoration: "none", display: "block", transition: "color 0.3s" }}
+                style={{
+                  color: themeColors.textSecondary,
+                  textDecoration: "none",
+                  fontSize: 14,
+                }}
               >
-                {text}
-              </motion.a>
+                {item}
+              </a>
             ))}
           </Space>
         </Col>
 
+        {/* Column 3 - Social + Organization Info */}
         <Col xs={24} md={8}>
-          <Title level={4} style={{ color: themeColors.primary, letterSpacing: 1 }}>Connect With Us</Title>
-          <Space size="middle">
-            {socialLinks.map((item, index) => (
+          <Title level={5} style={{ color: themeColors.textDark, marginBottom: 24 }}>Connect With Us</Title>
+          <Space size="middle" style={{ marginBottom: 16 }}>
+            {socialLinks.map((item) => (
               <motion.a
                 key={item.label}
                 href={item.href}
-                aria-label={item.label}
-                whileHover={{ scale: 1.2, rotate: 10 }}
-                whileTap={{ scale: 0.9 }}
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: 48,
-                  height: 48,
-                  borderRadius: "50%",
-                  background: themeColors.accent,
-                  color: item.color,
-                  fontSize: 20,
-                  transition: "all 0.3s",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
-                  border: "1px solid #e0e0e0",
-                  cursor: "pointer",
-                }}
                 target="_blank"
                 rel="noopener noreferrer"
+                whileHover={{ scale: 1.2 }}
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: "50%",
+                  background: "#fff",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  color: item.color,
+                  fontSize: 18,
+                  boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+                }}
               >
                 {item.icon}
               </motion.a>
             ))}
           </Space>
+
+          <div style={{ textAlign: "left", marginTop: 16 }}>
+            <a
+              href="https://www.nirankari.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: themeColors.primary,
+                fontWeight: "bold",
+                fontSize: 15,
+                textDecoration: "none",
+              }}
+            >
+              Sant Nirankari Mission
+            </a>
+
+            <Text type="secondary" style={{ display: "block", fontSize: 13, marginTop: 4 }}>
+              &copy; 2010 - {new Date().getFullYear()} | Sant Nirankari Charitable Foundation
+            </Text>
+
+            <Space style={{ marginTop: 12 }}>
+              <a href="#" style={{ color: themeColors.primary, fontSize: 14, textDecoration: "none" }}>
+                Sitemap
+              </a>
+              <Button type="primary" size="small" href="#" style={{ background: themeColors.primary, border: "none" }}>
+                Donate
+              </Button>
+            </Space>
+          </div>
         </Col>
       </Row>
     </motion.div>
 
-    <Divider style={{ margin: "40px 0 24px 0", borderColor: themeColors.accent }} />
-
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-    >
-      <Row
-        justify="space-between"
-        align="middle"
-        style={{
-          flexWrap: "wrap",
-          padding: "0 16px",
-          textAlign: "center",
-          maxWidth: 1200,
-          margin: "0 auto"
-        }}
-      >
-        <Col xs={24} md={8} style={{ marginBottom: 12 }}>
-          <a
-            href="https://www.nirankari.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              textDecoration: "none",
-              color: themeColors.textDark,
-              fontSize: 16,
-              fontWeight: 600,
-            }}
-          >
-            Sant Nirankari Mission
-          </a>
-        </Col>
-
-
-        <Col xs={24} md={8} style={{ marginBottom: 12 }}>
-          <Text type="secondary" style={{ fontSize: 14 }}>
-            &copy; 2010 - {new Date().getFullYear()} | Sant Nirankari Charitable Foundation
-          </Text>
-        </Col>
-
-        <Col xs={24} md={8} style={{ marginBottom: 12 }}>
-          <Space>
-            <motion.a href="#" whileHover={{ scale: 1.1 }} style={{ color: themeColors.primary, textDecoration: "none" }}>Sitemap</motion.a>
-            <motion.a href="#" whileHover={{ scale: 1.1 }} style={{ color: themeColors.primary, textDecoration: "none" }}>Donate</motion.a>
-          </Space>
-        </Col>
-      </Row>
-    </motion.div>
-
-    {/* Scroll to Top Button */}
+    {/* Scroll to Top */}
     <motion.div
       whileHover={{ scale: 1.2, rotate: 360 }}
       transition={{ duration: 0.6, type: "spring" }}

@@ -110,9 +110,47 @@ const MissionVision = () => {
                   }}
                 />
               </div>
-              <Paragraph style={{ fontSize: 16, color: "#374151", textAlign: "justify" }}>
-                When we give cheerfully, and when it is accepted with gratitude to the almighty, all are blessed. SNCF with its holy roots is set up with an objective to provide a better body, mind and soul to all those who are deprived, with the essence of being an instrument to God’s will and purpose. We believe that happiness increases by sharing and caring. The mission of the SNCF thus, is to serve with humility and share our resources to heal, enrich and empower millions around the globe.
-              </Paragraph>
+              <div
+                style={{
+                  maxHeight: "200px",
+                  overflowY: "auto",
+                  marginBottom: 18,
+                }}
+                className="small-scroll"
+              >
+                <style>
+                  {`
+                    .small-scroll::-webkit-scrollbar {
+                      width: 4px;
+                      background: #f3f4f6;
+                      border-radius: 4px;
+                    }
+                    .small-scroll::-webkit-scrollbar-thumb {
+                      background: #a5b4fc;
+                      border-radius: 4px;
+                    }
+                    .small-scroll {
+                      scrollbar-width: thin;
+                      scrollbar-color: #a5b4fc #f3f4f6;
+                    }
+                  `}
+                </style>
+                <Paragraph
+                  style={{
+                    fontSize: 16,
+                    color: "#374151",
+                    textAlign: "justify",
+                    display: "-webkit-box",
+                    WebkitLineClamp: 1,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    minHeight: "24px",
+                  }}
+                >
+                  When we give cheerfully, and when it is accepted with gratitude to the almighty, all are blessed. SNCF with its holy roots is set up with an objective to provide a better body, mind and soul to all those who are deprived, with the essence of being an instrument to God’s will and purpose. We believe that happiness increases by sharing and caring. The mission of the SNCF thus, is to serve with humility and share our resources to heal, enrich and empower millions around the globe.
+                </Paragraph>
+              </div>
               <div style={wavyAfterStyle}></div>
             </motion.div>
           </motion.div>
@@ -159,9 +197,47 @@ const MissionVision = () => {
                   }}
                 />
               </div>
-              <Paragraph style={{ fontSize: 16, color: "#374151", textAlign: "justify" }}>
-                “Living the spirit of service”, the work that SNCF engages in with individuals, families and communities around the world is only made possible by the involvement of ordinary individuals with an extraordinary spirit of service. SNCF envisions a world with smiles, a heaven where all humans are healthy, educated and self-dependent; and as such would continue to strive and achieve this very objective by utilizing all its resources for the benefit of people across the world. We see a future where our proactive efforts along with our association with other like-minded organizations would help turn this dream into a reality.
-              </Paragraph>
+              <div
+                style={{
+                  maxHeight: "200px",
+                  overflowY: "auto",
+                  marginBottom: 13,
+                }}
+                className="small-scroll"
+              >
+                <style>
+                  {`
+                    .small-scroll::-webkit-scrollbar {
+                      width: 4px;
+                      background: #f3f4f6;
+                      border-radius: 4px;
+                    }
+                    .small-scroll::-webkit-scrollbar-thumb {
+                      background: #a5b4fc;
+                      border-radius: 4px;
+                    }
+                    .small-scroll {
+                      scrollbar-width: thin;
+                      scrollbar-color: #a5b4fc #f3f4f6;
+                    }
+                  `}
+                </style>
+                <Paragraph
+                  style={{
+                    fontSize: 16,
+                    color: "#374151",
+                    textAlign: "justify",
+                    display: "-webkit-box",
+                    WebkitLineClamp: 1,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    minHeight: "24px",
+                  }}
+                >
+                  “Living the spirit of service”, the work that SNCF engages in with individuals, families and communities around the world is only made possible by the involvement of ordinary individuals with an extraordinary spirit of service. SNCF envisions a world with smiles, a heaven where all humans are healthy, educated and self-dependent; and as such would continue to strive and achieve this very objective by utilizing all its resources for the benefit of people across the world. We see a future where our proactive efforts along with our association with other like-minded organizations would help turn this dream into a reality.
+                </Paragraph>
+              </div>
               <div style={wavyAfterStyle}></div>
             </motion.div>
           </motion.div>
@@ -190,17 +266,34 @@ const MissionVision = () => {
         </Title>
       </motion.div>
 
-      {/* Call to Action Button */}
-      <motion.div
-        whileHover={{ scale: 1.1 }}
-        style={{ textAlign: "center", marginTop: 40 }}
-      >
-        <Button type="primary" size="large" style={{ borderRadius: "8px" }}>
-          Be Part of the Journey
-        </Button>
-      </motion.div>
+    
+    {/* Call to Action Button */}
+<div style={{ textAlign: "center", marginTop: 40, height: "60px" }}>
+  <motion.div
+    whileHover={{ scale: 1.1 }}
+    style={{
+      display: "inline-block",
+      willChange: "transform",
+    }}
+  >
+    <Button
+      type="primary"
+      size="large"
+      style={{
+        borderRadius: "8px",
+        transition: "transform 0.2s ease",
+      }}
+    >
+      Be Part of the Journey
+    </Button>
+  </motion.div>
+</div>
+
+
     </div>
   );
 };
+
+
 
 export default MissionVision;

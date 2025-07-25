@@ -334,7 +334,7 @@ const GalleryModal = ({ item, onClose }) => (
         style={{
           position: "fixed",
           top: 0, left: 0, right: 0, bottom: 0,
-          background: "rgba(28,39,109,0.90)",
+          background: "rgba(0,0,0,0.6)", // transparent black
           zIndex: 9999,
           display: "flex",
           alignItems: "center",
@@ -495,6 +495,7 @@ const GalleryTabGrid = ({ data, page, setPage, onCardClick }) => {
                   overflow: "hidden",
                 }}
                 bodyStyle={{ padding: 0, display: "flex", flexDirection: "column", flex: 1 }}
+                
               >
 
                 {/* Animated overlay icon */}
@@ -526,7 +527,7 @@ const GalleryTabGrid = ({ data, page, setPage, onCardClick }) => {
                       alt={item.title}
                       style={{
                         width: "100%",
-                        height: `${CARD_MEDIA_HEIGHT}px`,
+                        height: "43vh",
                         borderTopLeftRadius: 22,
                         borderTopRightRadius: 22,
                         objectFit: "cover",
@@ -775,7 +776,7 @@ const GalleryTabs = () => {
             key: "project",
             label: (
               <span>
-                <FaCamera style={{ marginRight: 8 }} />
+                <FaCamera style={{ marginRight: 8}} />
                 Projects
               </span>
             ),

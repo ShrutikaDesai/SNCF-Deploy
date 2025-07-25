@@ -1,45 +1,36 @@
-import React from 'react';
-import { Row, Col, Button, Typography, Divider } from 'antd';
-import { motion } from 'framer-motion';
-import Lottie from 'lottie-react';
-import backgroundAnimation from '../images/corner.json';
-import playButtonAnimation from '../images/button.json';
-import guidingForceImage from '../images/Mataji.webp';
-import img from '../images/member.jpeg'; // Placeholder for leader image
+import React from "react";
+import { Row, Col, Button, Typography, Divider } from "antd";
+import { motion } from "framer-motion";
+import Lottie from "lottie-react";
+import backgroundAnimation from "../images/corner.json";
+import playButtonAnimation from "../images/button.json";
+import guidingForceImage from "../images/Mataji.webp";
+import img from "../images/member.jpeg"; // Placeholder for leader image
 import theme from "../theme/themeConfig"; // <-- Import your theme config
-
 
 const { Title, Paragraph } = Typography;
 const { Text } = Typography;
 
 const leaders = [
   {
-    name: 'Shri President Name',
-    designation: 'President',
+    name: "Shri President Name",
+    designation: "President",
     image: img,
-    quote: 'Leading with purpose and compassion.',
+    quote: "Leading with purpose and compassion.",
   },
   {
-    name: 'Shri Vice-President Name',
-    designation: 'Vice-President',
+    name: "Shri Vice-President Name",
+    designation: "Vice-President",
     image: img,
-    quote: 'Empowering the future, one step at a time.',
+    quote: "Empowering the future, one step at a time.",
   },
   {
-    name: 'Shri Member Name',
-    designation: 'Chief Member',
+    name: "Shri Member Name",
+    designation: "Chief Member",
     image: img,
-    quote: 'Serving with dedication and integrity.',
+    quote: "Serving with dedication and integrity.",
   },
 ];
-
-
-
-
-
-
-
-
 
 const GuidingForce = () => {
   const paragraphVariants = {
@@ -54,33 +45,56 @@ const GuidingForce = () => {
   return (
     <section
       style={{
-        padding: '4rem 2rem',
+        padding: "6rem 2rem",
         background: theme.token.colorBgLayout,
-        position: 'relative',
-        overflow: 'hidden',
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      {/* Background Animation */}
+      {/* Decorative Background Gradient Blobs */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.4 }}
-        transition={{ duration: 2 }}
+        animate={{ opacity: 0.3 }}
+        transition={{ duration: 1.5 }}
+        viewport={{ once: true, amount: 0.4 }}
         style={{
-          position: 'absolute',
-          top: '-50px',
-          right: '-50px',
-          width: '300px',
-          opacity: 0.3,
+          position: "absolute",
+          top: "-80px",
+          left: "-80px",
+          width: "300px",
+          height: "300px",
+          borderRadius: "50%",
+          background: "radial-gradient(circle at center, #c7d2fe, transparent)",
           zIndex: 0,
         }}
-      >
-      </motion.div>
+      />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.3 }}
+        transition={{ duration: 1.5 }}
+        viewport={{ once: true, amount: 0.4 }}
+        style={{
+          position: "absolute",
+          bottom: "-60px",
+          right: "-60px",
+          width: "300px",
+          height: "300px",
+          borderRadius: "50%",
+          background: "radial-gradient(circle at center, #a5b4fc, transparent)",
+          zIndex: 0,
+        }}
+      />
 
       <Row
         gutter={[32, 32]}
         align="middle"
         justify="center"
-        style={{ zIndex: 1, position: 'relative', maxWidth: '1200px', margin: '0 auto' }}
+        style={{
+          zIndex: 1,
+          position: "relative",
+          maxWidth: "1200px",
+          margin: "0 auto",
+        }}
       >
         {/* Image Section */}
         <Col xs={24} md={10}>
@@ -90,103 +104,207 @@ const GuidingForce = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.2 }}
+            viewport={{ once: true, amount: 0.4 }}
             style={{
-              width: '70%', // Reduced for perfect balance
-              borderRadius: '20px',
-              boxShadow: '0 8px 24px rgba(0,0,0,0.1)',
-              display: 'block',
-              margin: '0 auto',
+              width: "100%",
+              borderRadius: "20px",
+              boxShadow: "0 12px 32px rgba(0,0,0,0.12)",
+              display: "block",
+              margin: "0 auto",
+              objectFit: "cover",
             }}
           />
         </Col>
 
         {/* Text Section */}
-        <Col xs={24} md={12}>
+        <Col xs={24} md={14}>
           <motion.div
             initial={{ x: 100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1 }}
+            viewport={{ once: true, amount: 0.4 }}
           >
-            <Title level={4} style={{ color: '#1c276d', marginBottom: 10 }}>
+            <Title
+              level={4}
+              style={{
+                color: "#2b8bbbff",
+                marginBottom: 8,
+                textTransform: "uppercase",
+                letterSpacing: 1.5,
+              }}
+            >
               Our Guiding Force
             </Title>
-            <Title level={2} style={{ color: '#1c276d', fontWeight: 'bold' }}>
+            <Title
+              level={2}
+              style={{
+                color: "#1c276d",
+                fontWeight: 700,
+                lineHeight: 1.3,
+              }}
+            >
               Her Holiness Satguru Mata Sudiksha Ji Maharaj
             </Title>
             <Paragraph
               style={{
                 fontSize: 18,
-                color: '#5f6a8d',
-                marginTop: 16,
+                color: "#4b5563",
+                marginTop: 20,
                 lineHeight: 1.8,
-                textAlign: 'justify',
+                textAlign: "justify",
               }}
             >
-              Her Holiness Satguru Mata Sudiksha Ji Maharaj is the revered head of the Sant Nirankari Mission, a global mission that promotes peace, unity, and social welfare. Her teachings inspire millions with the message of universal love, inner transformation, selfless service, and the importance of being socially responsible citizens.
+              Her Holiness Satguru Mata Sudiksha Ji Maharaj is the revered head
+              of the Sant Nirankari Mission, a global mission that promotes
+              peace, unity, and social welfare. Her teachings inspire millions
+              with the message of universal love, inner transformation, selfless
+              service, and the importance of being socially responsible
+              citizens.
             </Paragraph>
 
-            {/* Play Button */}
+            {/* Watch Video Button */}
             <motion.div
-              whileHover={{ scale: 1.1, rotate: 0 }}
-              whileTap={{ scale: 0.9 }}
-              style={{ display: 'flex', alignItems: 'center', marginTop: '2rem', cursor: 'pointer' }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 12px 24px rgba(99,102,241,0.2)",
+              }}
+              whileTap={{ scale: 0.95 }}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: "3rem",
+                cursor: "pointer",
+                gap: "1.5rem",
+                background: "rgba(255,255,255,0.2)",
+                borderRadius: "3rem",
+                boxShadow: "0 4px 20px rgba(99,102,241,0.1)",
+                padding: "1rem 2.5rem",
+                backdropFilter: "blur(8px)",
+                border: "1px solid rgba(255,255,255,0.2)",
+                transition: "all 0.3s ease",
+                width: "fit-content",
+                marginLeft: "auto",
+                marginRight: "auto",
+              }}
             >
-              <Lottie animationData={playButtonAnimation} style={{ width: 60, marginRight: 12 }} />
-              <Button type="primary" size="large" style={{ backgroundColor: '#1c276d', borderColor: '#1c276d' }}>
+              <div
+                style={{
+                  width: 64,
+                  height: 64,
+                  borderRadius: "50%",
+                  background:
+                    "linear-gradient(135deg, #2b8bbbff 0%, #0f3f57ff 100%)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  boxShadow: "0 4px 14px rgba(99,102,241,0.2)",
+                }}
+              >
+                <Lottie
+                  animationData={playButtonAnimation}
+                  style={{ width: 64, height: 84, color: "white" }}
+                />
+              </div>
+              <Button
+                type="primary"
+                size="large"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #2b8bbbff 0%, #0f3f57ff 100%)",
+                  border: "none",
+                  borderRadius: "2rem",
+                  fontWeight: 600,
+                  fontSize: 18,
+                  padding: "0 2.5rem",
+                  color: "#fff",
+                  letterSpacing: "1px",
+                  transition: "background 0.3s ease",
+                }}
+              >
                 Watch Video
               </Button>
             </motion.div>
-
           </motion.div>
         </Col>
       </Row>
 
-
-      <section style={{ padding: '4rem 1rem', backgroundColor: theme.token.colorBgLayout }}>
-        <Title level={2} style={{ textAlign: 'center', marginBottom: '3rem', color: '#1c276d' }}>
+      <section
+        style={{
+          padding: "4rem 1rem",
+          backgroundColor: theme.token.colorBgLayout,
+        }}
+      >
+        <Title
+          level={2}
+          style={{
+            textAlign: "center",
+            marginBottom: "3rem",
+            color: "#1c276d",
+          }}
+        >
           Our Pillars of Inspiration
         </Title>
 
-        <Row gutter={[24, 24]} justify="center" style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <Row
+          gutter={[24, 24]}
+          justify="center"
+          style={{ maxWidth: 1200, margin: "0 auto" }}
+        >
           {leaders.map((leader, index) => (
-            <Col key={index} xs={24} sm={12} md={8} style={{ display: 'flex', justifyContent: 'center' }}>
+            <Col
+              key={index}
+              xs={24}
+              sm={12}
+              md={8}
+              style={{ display: "flex", justifyContent: "center" }}
+            >
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: 'easeOut' }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
                 style={{
-                  backgroundColor: '#fff',
-                  padding: '2rem',
-                  borderRadius: '1.5rem',
-                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-                  textAlign: 'center',
-                  width: '100%',
-                  maxWidth: '320px',
+                  backgroundColor: "#fff",
+                  padding: "2rem",
+                  borderRadius: "1.5rem",
+                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                  textAlign: "center",
+                  width: "100%",
+                  maxWidth: "320px",
                 }}
               >
-                <div style={{ marginBottom: '1.5rem' }}>
+                <div style={{ marginBottom: "1.5rem" }}>
                   <img
                     src={leader.image}
                     alt={leader.name}
                     style={{
-                      width: '120px',
-                      height: '120px',
-                      borderRadius: '50%',
-                      objectFit: 'cover',
-                      border: '4px solid #1c276d',
-                      boxShadow: '0 0 10px rgba(0, 0, 0, 0.15)',
+                      width: "120px",
+                      height: "120px",
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                      border: "4px solid #1c276d",
+                      boxShadow: "0 0 10px rgba(0, 0, 0, 0.15)",
                     }}
                   />
                 </div>
-                <Title level={4} style={{ color: '#1c276d', marginBottom: '0.5rem' }}>
+                <Title
+                  level={4}
+                  style={{ color: "#1c276d", marginBottom: "0.5rem" }}
+                >
                   {leader.name}
                 </Title>
-                <Text style={{ display: 'block', marginBottom: '1rem', color: '#555' }}>
+                <Text
+                  style={{
+                    display: "block",
+                    marginBottom: "1rem",
+                    color: "#555",
+                  }}
+                >
                   {leader.designation}
                 </Text>
-                <blockquote style={{ fontStyle: 'italic', color: '#888' }}>
+                <blockquote style={{ fontStyle: "italic", color: "#888" }}>
                   "{leader.quote}"
                 </blockquote>
               </motion.div>
@@ -195,39 +313,31 @@ const GuidingForce = () => {
         </Row>
       </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       {/* Detailed Mission Section */}
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.2 }}
+        viewport={{ once: true, amount: 0.4 }}
         style={{
-          marginTop: '4rem',
-          padding: '2.5rem',
+          marginTop: "4rem",
+          padding: "2.5rem",
           background: theme.token.colorBgLayout,
-          borderRadius: '16px',
-          boxShadow: '0 8px 24px rgba(0,0,0,0.1)',
-          maxWidth: '1200px',
-          marginLeft: 'auto',
-          marginRight: 'auto',
+          borderRadius: "16px",
+          boxShadow: "0 8px 24px rgba(0,0,0,0.1)",
+          maxWidth: "1200px",
+          marginLeft: "auto",
+          marginRight: "auto",
         }}
       >
-        <Title level={3} style={{ color: '#1c276d', textAlign: 'center', marginBottom: '1rem' }}>
+        <Title
+          level={3}
+          style={{
+            color: "#1c276d",
+            textAlign: "center",
+            marginBottom: "1rem",
+          }}
+        >
           Serving Humanity: The Sant Nirankari Charitable Foundation Vision
         </Title>
         <Divider />
@@ -251,10 +361,10 @@ const GuidingForce = () => {
             <Paragraph
               style={{
                 fontSize: 18,
-                color: '#4a4a4a',
-                textAlign: 'justify',
+                color: "#4a4a4a",
+                textAlign: "justify",
                 lineHeight: 1.8,
-                marginTop: index === 0 ? '0' : '1.5rem',
+                marginTop: index === 0 ? "0" : "1.5rem",
               }}
             >
               {text}

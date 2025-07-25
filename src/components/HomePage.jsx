@@ -2,13 +2,11 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
-import '@fontsource/lavishly-yours';
+import "@fontsource/lavishly-yours";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { CalendarOutlined, RightCircleOutlined } from '@ant-design/icons';
-
-
+import { CalendarOutlined, RightCircleOutlined } from "@ant-design/icons";
 
 import {
   Card,
@@ -21,11 +19,7 @@ import {
   Divider,
   ConfigProvider,
 } from "antd";
-import {
-  HeartOutlined,
-  BookOutlined,
-  TeamOutlined,
-} from "@ant-design/icons";
+import { HeartOutlined, BookOutlined, TeamOutlined } from "@ant-design/icons";
 
 import image from "../images/city.jpg";
 import image2 from "../images/tree.jpg";
@@ -43,7 +37,6 @@ import slide3 from "../img/slider3.jpg";
 import slide4 from "../img/slider4.jpg";
 import slide5 from "../img/slider5.jpg";
 
-
 import Typewriter from "typewriter-effect";
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -55,72 +48,93 @@ import theme from "../theme/themeConfig"; // <-- Import your theme config
 const { Title, Text, Paragraph } = Typography;
 
 const events = [
-  { id: 1, name: 'Blood Donation Camp', date: '20 June 2025', link: '/events/blood-donation', category: 'heal' },
-  { id: 2, name: 'Tree Plantation Drive', date: '25 June 2025', link: '/events/tree-plantation', category: 'enrich' },
-  { id: 3, name: 'Free Health Checkup', date: '30 June 2025', link: '/events/health-checkup', category: 'heal' },
-  { id: 4, name: 'Youth Empowerment Workshop', date: '5 July 2025', link: '/events/youth-workshop', category: 'empower' },
+  {
+    id: 1,
+    name: "Blood Donation Camp",
+    date: "20 June 2025",
+    link: "/events/blood-donation",
+    category: "heal",
+  },
+  {
+    id: 2,
+    name: "Tree Plantation Drive",
+    date: "25 June 2025",
+    link: "/events/tree-plantation",
+    category: "enrich",
+  },
+  {
+    id: 3,
+    name: "Free Health Checkup",
+    date: "30 June 2025",
+    link: "/events/health-checkup",
+    category: "heal",
+  },
+  {
+    id: 4,
+    name: "Youth Empowerment Workshop",
+    date: "5 July 2025",
+    link: "/events/youth-workshop",
+    category: "empower",
+  },
 ];
 
 const categoryColors = {
-  heal: '#28B57B',     // Green
-  enrich: '#1BBAC7',   // Blue
-  empower: '#E93E8F',  // Pink
+  heal: "#28B57B", // Green
+  enrich: "#1BBAC7", // Blue
+  empower: "#E93E8F", // Pink
 };
-
 
 const statsData = {
   heal: [
-    { label: 'Blood Units Donated', value: '13,19,758+' },
-    { label: 'Total Patients Treated', value: '1,68,503+' },
-    { label: 'Camps Organized', value: '615+' },
-    { label: 'Blood Units Donated', value: '13,19,758+' },
-    { label: 'Total Patients Treated', value: '1,68,503+' },
+    { label: "Blood Units Donated", value: "13,19,758+" },
+    { label: "Total Patients Treated", value: "1,68,503+" },
+    { label: "Camps Organized", value: "615+" },
+    { label: "Blood Units Donated", value: "13,19,758+" },
+    { label: "Total Patients Treated", value: "1,68,503+" },
   ],
   enrich: [
-    { label: 'Sewing Centres', value: '45+' },
-    { label: 'Youth Benefitted', value: '13,500+' },
-    { label: 'Sewing Centres', value: '45+' },
-    { label: 'Youth Benefitted', value: '13,500+' },
-    { label: 'Sewing Centres', value: '45+' },
+    { label: "Sewing Centres", value: "45+" },
+    { label: "Youth Benefitted", value: "13,500+" },
+    { label: "Sewing Centres", value: "45+" },
+    { label: "Youth Benefitted", value: "13,500+" },
+    { label: "Sewing Centres", value: "45+" },
   ],
   empower: [
-    { label: 'Sewing Centres', value: '45+' },
-    { label: 'Youth Benefitted', value: '13,500+' },
-    { label: 'Total Trees Planted', value: '15,88,875+' },
-    { label: 'Oxygen Concentrators', value: '775+' },
-    { label: 'Covid Vaccination Centres', value: '55+' },
+    { label: "Sewing Centres", value: "45+" },
+    { label: "Youth Benefitted", value: "13,500+" },
+    { label: "Total Trees Planted", value: "15,88,875+" },
+    { label: "Oxygen Concentrators", value: "775+" },
+    { label: "Covid Vaccination Centres", value: "55+" },
   ],
 };
-
-
-
-
 
 const cards = [
   {
     image: image,
     title: "Sant Nirankari Health City",
-    description: "The Sant Nirankari Health City is a comprehensive healthcare hub currently under construction, aiming to provide top-notch medical care at affordable rates for everyone.",
+    description:
+      "The Sant Nirankari Health City is a comprehensive healthcare hub currently under construction, aiming to provide top-notch medical care at affordable rates for everyone.",
     category: "heal",
   },
   {
     image: image2,
     title: "Oneness वन",
-    description: "This innovative initiative was launched in 2021 to tackle deforestation by transforming neglected areas into flourishing mini-forests, restoring biodiversity one tiny plot at a time.",
+    description:
+      "This innovative initiative was launched in 2021 to tackle deforestation by transforming neglected areas into flourishing mini-forests, restoring biodiversity one tiny plot at a time.",
     category: "enrich",
   },
   {
     image: image3,
     title: "Blood Donation",
-    description: "For over 38 years, the mission has held regular blood donation drives. Since 2010, SNCF leads this life-saving effort, continuing Baba Hardev Singh Ji Maharaj's message.",
+    description:
+      "For over 38 years, the mission has held regular blood donation drives. Since 2010, SNCF leads this life-saving effort, continuing Baba Hardev Singh Ji Maharaj's message.",
     category: "empower",
   },
 ];
 
 const sliderSettings = {
-  centerMode: true,
-  centerPadding: "0px",
-  slidesToShow: 3,
+  centerMode: false, // Disable center mode to keep layout clean
+  slidesToShow: 3, // ✅ Show 3 cards at a time
   infinite: true,
   arrows: true,
   speed: 500,
@@ -128,17 +142,19 @@ const sliderSettings = {
   focusOnSelect: true,
   responsive: [
     {
-      breakpoint: 900,
+      breakpoint: 1024, // For tablets and medium screens
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 600, // For mobile devices
       settings: {
         slidesToShow: 1,
-        centerMode: false,
       },
     },
   ],
 };
-
-
-
 
 const projectSlides = [
   {
@@ -179,8 +195,6 @@ const projectSlides = [
   },
 ];
 
-
-
 const newsData = [
   {
     title: "SNCF Honored for Humanitarian Service",
@@ -205,39 +219,39 @@ const newsData = [
   },
 ];
 
-import healIcon from '../img/heal.webp';
-import enrichIcon from '../img/enrich.webp';
-import empowerIcon from '../img/empower.webp';
+import healIcon from "../img/heal.webp";
+import enrichIcon from "../img/enrich.webp";
+import empowerIcon from "../img/empower.webp";
 
 const missionCards = [
   {
     title: "",
-    category: "heal",  // ✅ Must add this
+    category: "heal", // ✅ Must add this
     description: "SNCF's Multifaceted Approach towards healthcare initiatives",
     icon: <img src={healIcon} alt="Heal Icon" style={{ width: "5rem" }} />,
     content: `SNCF enhances healthcare through hospitals, clinics, blood banks, dispensaries, and environmental initiatives.`,
   },
   {
     title: "",
-    category: "enrich",  // ✅ Must add this
+    category: "enrich", // ✅ Must add this
     description: "SNCF's Holistic Approach to Social Change",
     icon: <img src={enrichIcon} alt="Enrich Icon" style={{ width: "5rem" }} />,
     content: `SNCF empowers communities via education, supporting schools, vocational centers, libraries, and hostels across India.`,
   },
   {
     title: "",
-    category: "empower",  // ✅ Must add this
-    description: "SNCF investing in self-sufficiency, instilling empowerment through opportunity",
-    icon: <img src={empowerIcon} alt="Empower Icon" style={{ width: "5rem" }} />,
+    category: "empower", // ✅ Must add this
+    description:
+      "SNCF investing in self-sufficiency, instilling empowerment through opportunity",
+    icon: (
+      <img src={empowerIcon} alt="Empower Icon" style={{ width: "5rem" }} />
+    ),
     content: `SNCF fosters empowerment through workshops, women/youth programs, elder care, disaster relief, and disability support.`,
   },
 ];
 
-
-
 const HomePage = () => (
   <div>
-
     {/* Hero Section */}
     <section>
       <Swiper
@@ -248,7 +262,6 @@ const HomePage = () => (
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         style={{ height: "70vh" }}
       >
-
         {projectSlides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div
@@ -269,103 +282,120 @@ const HomePage = () => (
             >
               {!slide.hideContent && (
                 <Space direction="vertical" size="large" align="start">
-
-                  <Title level={1} style={{ ...slide.textStyle, fontWeight: 900, marginBottom: 0, fontFamily: "'Lavishly Yours', cursive", fontSize: "4rem", textShadow: "4px 1px 10px 4 px #fff", }}>
+                  <Title
+                    level={1}
+                    style={{
+                      ...slide.textStyle,
+                      fontWeight: 900,
+                      marginBottom: 0,
+                      fontFamily: "'Lavishly Yours', cursive",
+                      fontSize: "4rem",
+                      textShadow: "4px 1px 10px 4 px #fff",
+                    }}
+                  >
                     {slide.title}
                   </Title>
-                  <Paragraph style={{ ...slide.textStyle, fontSize: "1.2rem", maxWidth: 600 }}>
+                  <Paragraph
+                    style={{
+                      ...slide.textStyle,
+                      fontSize: "1.2rem",
+                      maxWidth: 600,
+                    }}
+                  >
                     {slide.subtitle}
                   </Paragraph>
                   <a
                     href="/your-target-url"
                     style={{
-                      position: 'relative',
-                      fontWeight: '600',
-                      fontSize: '1.1rem',
-                      color: slide.textStyle?.color || '#1890ff',
-                      textDecoration: 'none',
-                      cursor: 'pointer',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      overflow: 'hidden',
-                      '--underline-width': '0',
+                      position: "relative",
+                      fontWeight: "600",
+                      fontSize: "1.1rem",
+                      color: slide.textStyle?.color || "#1890ff",
+                      textDecoration: "none",
+                      cursor: "pointer",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      overflow: "hidden",
+                      "--underline-width": "0",
                     }}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.setProperty('--underline-width', '100%');
-                      const arrow = e.currentTarget.querySelector('.arrow');
-                      arrow.style.transform = 'translateX(5px)';
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.setProperty(
+                        "--underline-width",
+                        "100%"
+                      );
+                      const arrow = e.currentTarget.querySelector(".arrow");
+                      arrow.style.transform = "translateX(5px)";
                     }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.setProperty('--underline-width', '0');
-                      const arrow = e.currentTarget.querySelector('.arrow');
-                      arrow.style.transform = 'translateX(0)';
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.setProperty(
+                        "--underline-width",
+                        "0"
+                      );
+                      const arrow = e.currentTarget.querySelector(".arrow");
+                      arrow.style.transform = "translateX(0)";
                     }}
                   >
                     Read More
                     <span
                       className="arrow"
                       style={{
-                        display: 'inline-block',
-                        marginLeft: '8px',
-                        transition: 'transform 0.3s ease',
+                        display: "inline-block",
+                        marginLeft: "8px",
+                        transition: "transform 0.3s ease",
                       }}
                     >
                       ➔
                     </span>
                     <span
                       style={{
-                        position: 'absolute',
+                        position: "absolute",
                         bottom: 0,
                         left: 0,
-                        height: '2px',
-                        width: 'var(--underline-width, 0)',
-                        backgroundColor: slide.textStyle?.color || '#1890ff',
-                        transition: 'width 0.3s ease',
-                        borderRadius: '1px',
+                        height: "2px",
+                        width: "var(--underline-width, 0)",
+                        backgroundColor: slide.textStyle?.color || "#1890ff",
+                        transition: "width 0.3s ease",
+                        borderRadius: "1px",
                       }}
                     />
                   </a>
-
                 </Space>
               )}
             </div>
           </SwiperSlide>
         ))}
-
       </Swiper>
     </section>
-
-
-
-
 
     <section
       style={{
         fontFamily: "Poppins, sans-serif",
         background: theme.token.colorBgLayout,
-        padding: '12px 0',
-        marginTop: '5px',
-        borderRadius: '14px',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-        overflow: 'hidden',
-        position: 'relative',
-        width: '100%',
-        whiteSpace: 'nowrap',
-        cursor: 'pointer',
+        padding: "12px 0",
+        marginTop: "5px",
+        borderRadius: "14px",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+        overflow: "hidden",
+        position: "relative",
+        width: "100%",
+        whiteSpace: "nowrap",
+        cursor: "pointer",
       }}
       onMouseEnter={() => {
-        document.querySelector('.scroll-content').style.animationPlayState = 'paused';
+        document.querySelector(".scroll-content").style.animationPlayState =
+          "paused";
       }}
       onMouseLeave={() => {
-        document.querySelector('.scroll-content').style.animationPlayState = 'running';
+        document.querySelector(".scroll-content").style.animationPlayState =
+          "running";
       }}
     >
       <div
         className="scroll-content"
         style={{
-          display: 'inline-block',
-          minWidth: '200%',
-          animation: 'scroll 30s linear infinite',
+          display: "inline-block",
+          minWidth: "200%",
+          animation: "scroll 30s linear infinite",
         }}
       >
         {[...events, ...events].map((event, index) => (
@@ -373,31 +403,34 @@ const HomePage = () => (
             key={index}
             href={event.link}
             style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              marginRight: '50px',
-              color: 'blue',
-              textDecoration: 'none',
-              fontSize: '17px',
-              fontWeight: '600',
-              transition: 'transform 0.3s ease, color 0.3s ease',
+              display: "inline-flex",
+              alignItems: "center",
+              marginRight: "50px",
+              color: "blue",
+              textDecoration: "none",
+              fontSize: "17px",
+              fontWeight: "600",
+              transition: "transform 0.3s ease, color 0.3s ease",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.1)';
+              e.currentTarget.style.transform = "scale(1.1)";
               e.currentTarget.style.color = categoryColors[event.category];
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.color = '#1890ff';
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.color = "#1890ff";
             }}
           >
-            <CalendarOutlined style={{ marginRight: '8px', fontSize: '20px', color: '#52c41a' }} />
+            <CalendarOutlined
+              style={{ marginRight: "8px", fontSize: "20px", color: "#52c41a" }}
+            />
             {event.name} — {event.date}
-            <RightCircleOutlined style={{ marginLeft: '8px', fontSize: '18px', color: '#faad14' }} />
+            <RightCircleOutlined
+              style={{ marginLeft: "8px", fontSize: "18px", color: "#faad14" }}
+            />
           </a>
         ))}
       </div>
-
 
       <style>
         {`
@@ -409,35 +442,14 @@ const HomePage = () => (
       </style>
     </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <section style={{ padding: "4rem 1rem", background: theme.token.colorBgLayout }}>
-      <Row gutter={[24, 24]} justify="center" style={{ maxWidth: 1200, margin: "0 auto" }}>
+    <section
+      style={{ padding: "4rem 1rem", background: theme.token.colorBgLayout }}
+    >
+      <Row
+        gutter={[24, 24]}
+        justify="center"
+        style={{ maxWidth: 1200, margin: "0 auto" }}
+      >
         {missionCards.map((item, index) => {
           const missionColors = {
             heal: "rgba(40,181,123,0.15)",
@@ -494,8 +506,8 @@ const HomePage = () => (
                     transition: "filter 0.3s",
                   }}
                   bodyStyle={{
-                    display: 'flex',
-                    flexDirection: 'column',
+                    display: "flex",
+                    flexDirection: "column",
                     flex: 1,
                   }}
                   cover={
@@ -569,7 +581,13 @@ const HomePage = () => (
                     transition: "all 0.3s ease-in-out",
                   }}
                 >
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "14px",
+                    }}
+                  >
                     {statsData[catKey].map((stat, idx) => (
                       <div
                         key={idx}
@@ -583,22 +601,33 @@ const HomePage = () => (
                           boxShadow: "0 2px 6px rgba(0,0,0,0.08)",
                         }}
                       >
-                        <span style={{ fontWeight: 600, color: "#1c276d" }}>{stat.label}</span>
-                        <span style={{ fontWeight: 700, color: missionSolid[catKey] }}>{stat.value}</span>
+                        <span style={{ fontWeight: 600, color: "#1c276d" }}>
+                          {stat.label}
+                        </span>
+                        <span
+                          style={{
+                            fontWeight: 700,
+                            color: missionSolid[catKey],
+                          }}
+                        >
+                          {stat.value}
+                        </span>
                       </div>
                     ))}
                   </div>
 
                   <button
                     style={{
-                      background: seeMoreHover ? missionSolid[catKey] : "transparent",
+                      background: seeMoreHover
+                        ? missionSolid[catKey]
+                        : "transparent",
                       color: seeMoreHover ? "#fff" : missionSolid[catKey],
                       border: `2px solid ${missionSolid[catKey]}`,
                       borderRadius: 20,
                       padding: "10px",
                       fontWeight: 600,
                       cursor: "pointer",
-                      textAlign: 'center',
+                      textAlign: "center",
                       transition: "all 0.3s",
                       marginTop: "2px",
                     }}
@@ -628,18 +657,10 @@ const HomePage = () => (
       </Row>
     </section>
 
-
-
-
-
-
-
-
-
-
-
     {/* About Us Section */}
-    <section style={{ padding: "4rem 1rem", background: theme.token.colorBgLayout }}>
+    <section
+      style={{ padding: "4rem 1rem", background: theme.token.colorBgLayout }}
+    >
       <Row gutter={[24, 24]} style={{ maxWidth: 1200, margin: "0 auto" }}>
         <Col xs={24} md={12}>
           <div style={{ padding: "1rem" }}>
@@ -660,10 +681,25 @@ const HomePage = () => (
             <Title level={2} style={{ color: "#1890ff", fontWeight: 700 }}>
               About Us
             </Title>
-            <Paragraph style={{ textAlign: "justify", color: theme.token.colorTextSecondary }}>
-              The Sant Nirankari Charitable Foundation isn't just about handing out aid. Guided by the principle of oneness, we bring compassion, care, and kindness to communities across the globe. Our work extends beyond basic charity, tackling social and environmental issues head-on. We strive to empower the underprivileged and protect our planet, creating a better world for all.
+            <Paragraph
+              style={{
+                textAlign: "justify",
+                color: theme.token.colorTextSecondary,
+              }}
+            >
+              The Sant Nirankari Charitable Foundation isn't just about handing
+              out aid. Guided by the principle of oneness, we bring compassion,
+              care, and kindness to communities across the globe. Our work
+              extends beyond basic charity, tackling social and environmental
+              issues head-on. We strive to empower the underprivileged and
+              protect our planet, creating a better world for all.
             </Paragraph>
-            <Button type="primary" size="large" style={{ background: "#1890ff", color: "white" }} href="/about">
+            <Button
+              type="primary"
+              size="large"
+              style={{ background: "#1890ff", color: "white" }}
+              href="/about"
+            >
               Who We Are
             </Button>
           </Space>
@@ -671,12 +707,10 @@ const HomePage = () => (
       </Row>
     </section>
 
-
-
-
-
     {/* Vision Section */}
-    <section style={{ padding: "4rem 1rem", background: theme.token.colorBgLayout }}>
+    <section
+      style={{ padding: "4rem 1rem", background: theme.token.colorBgLayout }}
+    >
       <div style={{ maxWidth: 1200, margin: "0 auto", textAlign: "center" }}>
         <Title level={2} style={{ color: "#1890ff", fontWeight: 700 }}>
           From Vision to Action
@@ -710,6 +744,8 @@ const HomePage = () => (
                           backgroundPosition: "center",
                           borderTopLeftRadius: 16,
                           borderTopRightRadius: 16,
+                          border: `2px solid ${categoryColors[card.category]}`,
+                          boxSizing: "border-box",
                         }}
                       />
                       {/* Black Divider Line */}
@@ -721,7 +757,14 @@ const HomePage = () => (
                     </div>
                   }
                 >
-                  <Title level={4} style={{ color: "#1a237e", fontWeight: 700, marginBottom: 8 }}>
+                  <Title
+                    level={4}
+                    style={{
+                      color: "#1a237e",
+                      fontWeight: 700,
+                      marginBottom: 8,
+                    }}
+                  >
                     {card.title}
                   </Title>
                   <Paragraph style={{ color: "#374151", minHeight: 80 }}>
@@ -753,33 +796,35 @@ const HomePage = () => (
         transition: transform 0.4s cubic-bezier(.4,2,.6,1);
         opacity: 1 !important;
         pointer-events: auto;
+        padding: 0 10px;
+        overflow: visible;
+        position: relative;
+        z-index: 1;
       }
 
       .slick-center .center-zoom-card,
       .slick-slide .center-zoom-card {
-    
-      
         z-index: 1;
       }
 
       .slick-arrow {
-    background: #fff !important;
-    padding: 6px;
-    border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    width: 40px;
-    height: 37px;
-    z-index: 5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
+        background: #fff !important;
+        padding: 6px;
+        border-radius: 50%;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        width: 40px;
+        height: 38px;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
 
       .slick-arrow:before {
         color: #1a237e;
         font-size: 28px;
+        line-height: 1.06;
       }
 
       /* Move slider arrows slightly away */
@@ -832,12 +877,41 @@ const HomePage = () => (
           transform: scale(1) !important;
         }
       }
+
+      /* Only allow overflow at slick-list level */
+      .slick-list {
+        overflow: hidden !important;
+      }
+
+      .slick-slide {
+        /* already set above */
+      }
+
+      /* Hover effect */
+      .center-zoom-card {
+        transition: all 0.4s ease-in-out;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        position: relative;
+        will-change: transform;
+      }
+
+      .center-zoom-card:hover {
+        transform: scale(1.02);
+        box-shadow:
+          0 8px 24px rgba(0, 0, 0, 0.25),
+          0 0 0 6px rgba(24, 144, 255, 0.12),
+          0 0 24px rgba(24, 144, 255, 0.18);
+        z-index: 100;
+        pointer-events: auto;
+      }
+
+      /* Prevent clipping from containers */
+      .slider-container, .slick-slider {
+        position: relative;
+      }
     `}</style>
       </div>
     </section>
-
-
-
 
     {/* Partners Section */}
     <section
@@ -878,7 +952,7 @@ const HomePage = () => (
               animation: "marquee 40s linear infinite",
             }}
           >
-            {[...Array(2)].map((_, loopIdx) => (
+            {[...Array(2)].map((_, loopIdx) =>
               [img4, img5, img6, img4, img5, img6].map((img, idx) => (
                 <div
                   key={`r-${loopIdx}-${idx}`}
@@ -899,12 +973,16 @@ const HomePage = () => (
                       filter: "grayscale(0%) brightness(1)",
                       transition: "transform 0.3s ease",
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-                    onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.transform = "scale(1.1)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.transform = "scale(1)")
+                    }
                   />
                 </div>
               ))
-            ))}
+            )}
           </div>
         </div>
 
@@ -926,7 +1004,7 @@ const HomePage = () => (
               animation: "marquee-reverse 40s linear infinite",
             }}
           >
-            {[...Array(2)].map((_, loopIdx) => (
+            {[...Array(2)].map((_, loopIdx) =>
               [img4, img5, img6, img4, img5, img6].map((img, idx) => (
                 <div
                   key={`rev-${loopIdx}-${idx}`}
@@ -947,12 +1025,16 @@ const HomePage = () => (
                       filter: "grayscale(0%) brightness(1)",
                       transition: "transform 0.3s ease",
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-                    onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.transform = "scale(1.1)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.transform = "scale(1)")
+                    }
                   />
                 </div>
               ))
-            ))}
+            )}
           </div>
         </div>
 
@@ -974,25 +1056,31 @@ const HomePage = () => (
       </div>
     </section>
 
-
-
-
-
-
-
     {/* News Section */}
-    <section style={{ padding: "4rem 1rem", background: theme.token.colorBgLayout }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", textAlign: "center" }}>
-        <Title level={2} style={{ color: theme.token.colorPrimary, fontWeight: 700 }}>
+    <section
+      style={{ padding: "4rem 1rem", background: theme.token.colorBgLayout }}
+    >
+      <div style={{ maxWidth: 1200, margin: "0 auto", textAlign: "center", overflow: "visible" }}>
+        <Title
+          level={2}
+          style={{ color: theme.token.colorPrimary, fontWeight: 700 }}
+        >
           Latest News & Stories
         </Title>
-        <Paragraph type="secondary" style={{ fontSize: "1.1rem", color: theme.token.colorTextSecondary }}>
+        <Paragraph
+          type="secondary"
+          style={{ fontSize: "1.1rem", color: theme.token.colorTextSecondary }}
+        >
           Stay updated with our latest efforts and inspiring stories.
         </Paragraph>
         <Row gutter={[24, 24]} style={{ marginTop: "2rem" }}>
           {newsData.map((news, index) => (
             <Col key={index} xs={24} md={8}>
-              <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.3, duration: 0.6 }}>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.3, duration: 0.6 }}
+              >
                 <Card
                   hoverable
                   cover={
@@ -1003,23 +1091,35 @@ const HomePage = () => (
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                         borderTopLeftRadius: theme.components.Card.borderRadius,
-                        borderTopRightRadius: theme.components.Card.borderRadius,
+                        borderTopRightRadius:
+                          theme.components.Card.borderRadius,
                       }}
                     />
                   }
                 >
                   <Card.Meta
                     title={
-                      <Title level={4} style={{ color: theme.token.colorPrimary, fontWeight: 700 }}>
+                      <Title
+                        level={4}
+                        style={{
+                          color: theme.token.colorPrimary,
+                          fontWeight: 700,
+                        }}
+                      >
                         {news.title}
                       </Title>
                     }
                     description={
                       <>
-                        <Paragraph style={{ color: theme.token.colorTextSecondary }}>
+                        <Paragraph
+                          style={{ color: theme.token.colorTextSecondary }}
+                        >
                           {news.excerpt}
                         </Paragraph>
-                        <Text type="secondary" style={{ color: theme.token.colorTextTertiary }}>
+                        <Text
+                          type="secondary"
+                          style={{ color: theme.token.colorTextTertiary }}
+                        >
                           {news.date}
                         </Text>
                       </>
